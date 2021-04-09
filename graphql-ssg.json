@@ -1,0 +1,5 @@
+{
+  "url": "https://api.graphql.jobs/",
+  "out": "./out",
+  "in": "./pages"
+}

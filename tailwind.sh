@@ -1,0 +1,1 @@
+NODE_ENV=production tailwindcss-cli build pages/index.tailwind.css -o pages/index.css

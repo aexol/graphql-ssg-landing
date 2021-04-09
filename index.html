@@ -1,0 +1,6951 @@
+<html>
+  <head>
+    <style id="styleTag">
+      /* ./src/tailwind.css */
+
+/* ! tailwindcss v2.1.1 | MIT License | https://tailwindcss.com */
+
+/*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
+
+/*
+Document
+========
+*/
+
+/**
+Use a better box model (opinionated).
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/**
+Use a more readable tab size (opinionated).
+*/
+
+:root {
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+     tab-size: 4;
+}
+
+/**
+1. Correct the line height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+*/
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/*
+Sections
+========
+*/
+
+/**
+Remove the margin in all browsers.
+*/
+
+body {
+  margin: 0;
+}
+
+/**
+Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+*/
+
+body {
+  font-family:
+		system-ui,
+		-apple-system, /* Firefox supports this but not yet `system-ui` */
+		'Segoe UI',
+		Roboto,
+		Helvetica,
+		Arial,
+		sans-serif,
+		'Apple Color Emoji',
+		'Segoe UI Emoji';
+}
+
+/*
+Grouping content
+================
+*/
+
+/**
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+*/
+
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+}
+
+/*
+Text-level semantics
+====================
+*/
+
+/**
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr[title] {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/**
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+2. Correct the odd 'em' font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family:
+		ui-monospace,
+		SFMono-Regular,
+		Consolas,
+		'Liberation Mono',
+		Menlo,
+		monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/**
+Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+Tabular data
+============
+*/
+
+/**
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+*/
+
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+}
+
+/*
+Forms
+=====
+*/
+
+/**
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+Remove the inheritance of text transform in Edge and Firefox.
+1. Remove the inheritance of text transform in Firefox.
+*/
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+Correct the inability to style clickable types in iOS and Safari.
+*/
+
+button {
+  -webkit-appearance: button;
+}
+
+/**
+Remove the inner border and padding in Firefox.
+*/
+
+/**
+Restore the focus styles unset by the previous rule.
+*/
+
+/**
+Remove the additional ':invalid' styles in Firefox.
+See: https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737
+*/
+
+/**
+Remove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.
+*/
+
+legend {
+  padding: 0;
+}
+
+/**
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+/**
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+/**
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+/**
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to 'inherit' in Safari.
+*/
+
+/*
+Interactive
+===========
+*/
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/**
+ * Manually forked from SUIT CSS Base: https://github.com/suitcss/base
+ * A thin layer on top of normalize.css that provides a starting point more
+ * suitable for web applications.
+ */
+
+/**
+ * Removes the default spacing and border for appropriate elements.
+ */
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+button {
+  background-color: transparent;
+  background-image: none;
+}
+
+/**
+ * Work around a Firefox/IE bug where the transparent `button` background
+ * results in a loss of the default `button` focus styles.
+ */
+
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Tailwind custom reset styles
+ */
+
+/**
+ * 1. Use the user's configured `sans` font-family (with Tailwind's default
+ *    sans-serif font stack as a fallback) as a sane default.
+ * 2. Use Tailwind's default "normal" line-height so the user isn't forced
+ *    to override it to ensure consistency even when using the default theme.
+ */
+
+html {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 1 */
+  line-height: 1.5; /* 2 */
+}
+
+/**
+ * Inherit font-family and line-height from `html` so users can set them as
+ * a class directly on the `html` element.
+ */
+
+body {
+  font-family: inherit;
+  line-height: inherit;
+}
+
+/**
+ * 1. Prevent padding and border from affecting element width.
+ *
+ *    We used to set this in the html element and inherit from
+ *    the parent element for everything else. This caused issues
+ *    in shadow-dom-enhanced elements like <details> where the content
+ *    is wrapped by a div with box-sizing set to `content-box`.
+ *
+ *    https://github.com/mozdevs/cssremedy/issues/4
+ *
+ *
+ * 2. Allow adding a border to an element by just adding a border-width.
+ *
+ *    By default, the way the browser specifies that an element should have no
+ *    border is by setting it's border-style to `none` in the user-agent
+ *    stylesheet.
+ *
+ *    In order to easily add borders to elements by just setting the `border-width`
+ *    property, we change the default border-style for all elements to `solid`, and
+ *    use border-width to hide them instead. This way our `border` utilities only
+ *    need to set the `border-width` property instead of the entire `border`
+ *    shorthand, making our border utilities much more straightforward to compose.
+ *
+ *    https://github.com/tailwindcss/tailwindcss/pull/116
+ */
+
+*,
+::before,
+::after {
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: #e5e7eb; /* 2 */
+}
+
+/*
+ * Ensure horizontal rules are visible by default
+ */
+
+hr {
+  border-top-width: 1px;
+}
+
+/**
+ * Undo the `border-style: none` reset that Normalize applies to images so that
+ * our `border-{width}` utilities have the expected effect.
+ *
+ * The Normalize reset is unnecessary for us since we default the border-width
+ * to 0 on all elements.
+ *
+ * https://github.com/tailwindcss/tailwindcss/issues/362
+ */
+
+img {
+  border-style: solid;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1;
+  color: #9ca3af;
+}
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  opacity: 1;
+  color: #9ca3af;
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+  color: #9ca3af;
+}
+
+button {
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/**
+ * Reset links to optimize for opt-in styling instead of
+ * opt-out.
+ */
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/**
+ * Reset form element properties that are easy to forget to
+ * style explicitly so you don't inadvertently introduce
+ * styles that deviate from your design system. These styles
+ * supplement a partial reset that is already applied by
+ * normalize.css.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  padding: 0;
+  line-height: inherit;
+  color: inherit;
+}
+
+/**
+ * Use the configured 'mono' font family for elements that
+ * are expected to be rendered with a monospace font, falling
+ * back to the system monospace stack if there is no configured
+ * 'mono' font family.
+ */
+
+pre,
+code,
+kbd,
+samp {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/**
+ * Make replaced elements `display: block` by default as that's
+ * the behavior you want almost all of the time. Inspired by
+ * CSS Remedy, with `svg` added as well.
+ *
+ * https://github.com/mozdevs/cssremedy/issues/14
+ */
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+}
+
+/**
+ * Constrain images and videos to the parent width and preserve
+ * their intrinsic aspect ratio.
+ *
+ * https://github.com/mozdevs/cssremedy/issues/14
+ */
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+.bg-indigo-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(79, 70, 229, var(--tw-bg-opacity));
+}
+
+.hover\:bg-indigo-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(67, 56, 202, var(--tw-bg-opacity));
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.border-b {
+  border-bottom-width: 1px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.flex {
+  display: flex;
+}
+
+.table {
+  display: table;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.leading-none {
+  line-height: 1;
+}
+
+.leading-tight {
+  line-height: 1.25;
+}
+
+.leading-relaxed {
+  line-height: 1.625;
+}
+
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.-mx-8 {
+  margin-left: -2rem;
+  margin-right: -2rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mr-6 {
+  margin-right: 1.5rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
+.mb-20 {
+  margin-bottom: 5rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.p-5 {
+  padding: 1.25rem;
+}
+
+.p-20 {
+  padding: 5rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.static {
+  position: static;
+}
+
+* {
+  --tw-shadow: 0 0 #0000;
+}
+
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-lg {
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+* {
+  --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgba(59, 130, 246, 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+
+.text-gray-400 {
+  --tw-text-opacity: 1;
+  color: rgba(156, 163, 175, var(--tw-text-opacity));
+}
+
+.text-gray-600 {
+  --tw-text-opacity: 1;
+  color: rgba(75, 85, 99, var(--tw-text-opacity));
+}
+
+.text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgba(59, 130, 246, var(--tw-text-opacity));
+}
+
+.text-blue-600 {
+  --tw-text-opacity: 1;
+  color: rgba(37, 99, 235, var(--tw-text-opacity));
+}
+
+.text-blue-900 {
+  --tw-text-opacity: 1;
+  color: rgba(30, 58, 138, var(--tw-text-opacity));
+}
+
+.text-indigo-600 {
+  --tw-text-opacity: 1;
+  color: rgba(79, 70, 229, var(--tw-text-opacity));
+}
+
+.hover\:underline:hover {
+  text-decoration: underline;
+}
+
+.w-full {
+  width: 100%;
+}
+
+@-webkit-keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+@-webkit-keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
+            animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50% {
+    transform: none;
+    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
+            animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    -webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
+            animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50% {
+    transform: none;
+    -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
+            animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+@import "https://unpkg.com/@tailwindcss/typography@0.2.x/dist/typography.min.css";
+
+.hljs {
+  padding: 2rem !important;
+}
+
+.markdown {
+  color: #4a5568;
+  max-width: 65ch;
+}
+
+.markdown [class~="lead"] {
+  color: #4a5568;
+  font-size: 1.25em;
+  line-height: 1.6;
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+}
+
+.markdown a {
+  color: #1a202c;
+  text-decoration: underline;
+}
+
+.markdown strong {
+  color: #1a202c;
+  font-weight: 600;
+}
+
+.markdown ol {
+  counter-reset: list-counter;
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+.markdown ol > li {
+  position: relative;
+  counter-increment: list-counter;
+  padding-left: 1.75em;
+}
+
+.markdown ol > li::before {
+  content: counter(list-counter) ".";
+  position: absolute;
+  font-weight: 400;
+  color: #718096;
+}
+
+.markdown ul > li {
+  position: relative;
+  padding-left: 1.75em;
+}
+
+.markdown ul > li::before {
+  content: "";
+  position: absolute;
+  background-color: #cbd5e0;
+  border-radius: 50%;
+  width: 0.375em;
+  height: 0.375em;
+  top: calc(0.875em - 0.1875em);
+  left: 0.25em;
+}
+
+.markdown hr {
+  border-color: #e2e8f0;
+  border-top-width: 1px;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.markdown blockquote {
+  font-weight: 500;
+  font-style: italic;
+  color: #1a202c;
+  border-left-width: 0.25rem;
+  border-left-color: #e2e8f0;
+  quotes: "\201C""\201D""\2018""\2019";
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
+  padding-left: 1em;
+}
+
+.markdown blockquote p:first-of-type::before {
+  content: open-quote;
+}
+
+.markdown blockquote p:last-of-type::after {
+  content: close-quote;
+}
+
+.markdown h1 {
+  color: #1a202c;
+  font-weight: 800;
+  font-size: 2.25em;
+  margin-top: 0;
+  margin-bottom: 0.8888889em;
+  line-height: 1.1111111;
+}
+
+.markdown h2 {
+  color: #1a202c;
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  line-height: 1.3333333;
+}
+
+.markdown h3 {
+  color: #1a202c;
+  font-weight: 600;
+  font-size: 1.25em;
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+  line-height: 1.6;
+}
+
+.markdown h4 {
+  color: #1a202c;
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.5;
+}
+
+.markdown figure figcaption {
+  color: #718096;
+  font-size: 0.875em;
+  line-height: 1.4285714;
+  margin-top: 0.8571429em;
+}
+
+.markdown code {
+  color: #1a202c;
+  font-weight: 600;
+  font-size: 0.875em;
+}
+
+.markdown code::before {
+  content: "`";
+}
+
+.markdown code::after {
+  content: "`";
+}
+
+.markdown pre {
+  color: #e2e8f0;
+  background-color: #2d3748;
+  overflow-x: auto;
+  font-size: 0.875em;
+  line-height: 1.7142857;
+  margin-top: 1.7142857em;
+  margin-bottom: 1.7142857em;
+  border-radius: 0.375rem;
+  padding-top: 0.8571429em;
+  padding-right: 1.1428571em;
+  padding-bottom: 0.8571429em;
+  padding-left: 1.1428571em;
+}
+
+.markdown pre code {
+  background-color: transparent;
+  border-width: 0;
+  border-radius: 0;
+  padding: 0;
+  font-weight: 400;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+.markdown pre code::before {
+  content: "";
+}
+
+.markdown pre code::after {
+  content: "";
+}
+
+.markdown table {
+  width: 100%;
+  table-layout: auto;
+  text-align: left;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  font-size: 0.875em;
+  line-height: 1.7142857;
+}
+
+.markdown thead {
+  color: #1a202c;
+  font-weight: 600;
+  border-bottom-width: 1px;
+  border-bottom-color: #cbd5e0;
+}
+
+.markdown thead th {
+  vertical-align: bottom;
+  padding-right: 0.5714286em;
+  padding-bottom: 0.5714286em;
+  padding-left: 0.5714286em;
+}
+
+.markdown tbody tr {
+  border-bottom-width: 1px;
+  border-bottom-color: #e2e8f0;
+}
+
+.markdown tbody tr:last-child {
+  border-bottom-width: 0;
+}
+
+.markdown tbody td {
+  vertical-align: top;
+  padding-top: 0.5714286em;
+  padding-right: 0.5714286em;
+  padding-bottom: 0.5714286em;
+  padding-left: 0.5714286em;
+}
+
+.markdown {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.markdown p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+.markdown img {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.markdown video {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.markdown figure {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.markdown figure > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown h2 code {
+  font-size: 0.875em;
+}
+
+.markdown h3 code {
+  font-size: 0.9em;
+}
+
+.markdown ul {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+.markdown li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.markdown ol > li:before {
+  left: 0;
+}
+
+.markdown > ul > li p {
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+.markdown > ul > li > *:first-child {
+  margin-top: 1.25em;
+}
+
+.markdown > ul > li > *:last-child {
+  margin-bottom: 1.25em;
+}
+
+.markdown > ol > li > *:first-child {
+  margin-top: 1.25em;
+}
+
+.markdown > ol > li > *:last-child {
+  margin-bottom: 1.25em;
+}
+
+.markdown ul ul,
+.markdown ul ol,
+.markdown ol ul,
+.markdown ol ol {
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+.markdown hr + * {
+  margin-top: 0;
+}
+
+.markdown h2 + * {
+  margin-top: 0;
+}
+
+.markdown h3 + * {
+  margin-top: 0;
+}
+
+.markdown h4 + * {
+  margin-top: 0;
+}
+
+.markdown thead th:first-child {
+  padding-left: 0;
+}
+
+.markdown thead th:last-child {
+  padding-right: 0;
+}
+
+.markdown tbody td:first-child {
+  padding-left: 0;
+}
+
+.markdown tbody td:last-child {
+  padding-right: 0;
+}
+
+.markdown > :first-child {
+  margin-top: 0;
+}
+
+.markdown > :last-child {
+  margin-bottom: 0;
+}
+
+details summary {
+  cursor: pointer;
+}
+
+details summary > * {
+  display: inline;
+}
+
+@media (min-width: 640px) {
+}
+
+@media (min-width: 768px) {
+  .md\:mb-0 {
+    margin-bottom: 0px;
+  }
+
+  .md\:w-1\/3 {
+    width: 33.333333%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:flex-row {
+    flex-direction: row;
+  }
+
+  .lg\:mr-auto {
+    margin-right: auto;
+  }
+
+  .lg\:text-left {
+    text-align: left;
+  }
+
+  .lg\:w-auto {
+    width: auto;
+  }
+}
+
+@media (min-width: 1280px) {
+}
+
+@media (min-width: 1536px) {
+}
+
+    </style>
+    <script type="module">
+      const AllTypesProps = {
+	Query:{
+		jobs:{
+			input:{
+				type:"JobsInput",
+				array:false,
+				arrayRequired:false,
+				required:false
+			}
+		},
+		job:{
+			input:{
+				type:"JobInput",
+				array:false,
+				arrayRequired:false,
+				required:true
+			}
+		},
+		locations:{
+			input:{
+				type:"LocationsInput",
+				array:false,
+				arrayRequired:false,
+				required:true
+			}
+		},
+		city:{
+			input:{
+				type:"LocationInput",
+				array:false,
+				arrayRequired:false,
+				required:true
+			}
+		},
+		country:{
+			input:{
+				type:"LocationInput",
+				array:false,
+				arrayRequired:false,
+				required:true
+			}
+		},
+		remote:{
+			input:{
+				type:"LocationInput",
+				array:false,
+				arrayRequired:false,
+				required:true
+			}
+		}
+	},
+	JobsInput:{
+		type:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		}
+	},
+	Job:{
+		cities:{
+			where:{
+				type:"CityWhereInput",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			orderBy:{
+				type:"CityOrderByInput",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			skip:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			after:{
+				type:"String",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			before:{
+				type:"String",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			first:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			last:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			}
+		},
+		countries:{
+			where:{
+				type:"CountryWhereInput",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			orderBy:{
+				type:"CountryOrderByInput",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			skip:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			after:{
+				type:"String",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			before:{
+				type:"String",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			first:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			last:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			}
+		},
+		remotes:{
+			where:{
+				type:"RemoteWhereInput",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			orderBy:{
+				type:"RemoteOrderByInput",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			skip:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			after:{
+				type:"String",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			before:{
+				type:"String",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			first:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			last:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			}
+		},
+		tags:{
+			where:{
+				type:"TagWhereInput",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			orderBy:{
+				type:"TagOrderByInput",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			skip:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			after:{
+				type:"String",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			before:{
+				type:"String",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			first:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			last:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			}
+		}
+	},
+	Commitment:{
+		jobs:{
+			where:{
+				type:"JobWhereInput",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			orderBy:{
+				type:"JobOrderByInput",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			skip:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			after:{
+				type:"String",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			before:{
+				type:"String",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			first:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			last:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			}
+		}
+	},
+	JobWhereInput:{
+		id:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_in:{
+			type:"ID",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		id_not_in:{
+			type:"ID",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		id_lt:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_lte:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_gt:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_gte:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_contains:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not_contains:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_starts_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not_starts_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_ends_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not_ends_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		title:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		title_not:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		title_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		title_not_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		title_lt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		title_lte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		title_gt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		title_gte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		title_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		title_not_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		title_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		title_not_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		title_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		title_not_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		slug_not_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		slug_lt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_lte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_gt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_gte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		commitment:{
+			type:"CommitmentWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		cities_every:{
+			type:"CityWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		cities_some:{
+			type:"CityWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		cities_none:{
+			type:"CityWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		countries_every:{
+			type:"CountryWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		countries_some:{
+			type:"CountryWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		countries_none:{
+			type:"CountryWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		remotes_every:{
+			type:"RemoteWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		remotes_some:{
+			type:"RemoteWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		remotes_none:{
+			type:"RemoteWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		description:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		description_not:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		description_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		description_not_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		description_lt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		description_lte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		description_gt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		description_gte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		description_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		description_not_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		description_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		description_not_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		description_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		description_not_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		applyUrl:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		applyUrl_not:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		applyUrl_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		applyUrl_not_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		applyUrl_lt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		applyUrl_lte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		applyUrl_gt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		applyUrl_gte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		applyUrl_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		applyUrl_not_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		applyUrl_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		applyUrl_not_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		applyUrl_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		applyUrl_not_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		company:{
+			type:"CompanyWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		tags_every:{
+			type:"TagWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		tags_some:{
+			type:"TagWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		tags_none:{
+			type:"TagWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		isPublished:{
+			type:"Boolean",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		isPublished_not:{
+			type:"Boolean",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		isFeatured:{
+			type:"Boolean",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		isFeatured_not:{
+			type:"Boolean",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		locationNames:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		locationNames_not:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		locationNames_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		locationNames_not_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		locationNames_lt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		locationNames_lte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		locationNames_gt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		locationNames_gte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		locationNames_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		locationNames_not_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		locationNames_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		locationNames_not_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		locationNames_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		locationNames_not_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		userEmail:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		userEmail_not:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		userEmail_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		userEmail_not_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		userEmail_lt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		userEmail_lte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		userEmail_gt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		userEmail_gte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		userEmail_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		userEmail_not_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		userEmail_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		userEmail_not_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		userEmail_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		userEmail_not_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		postedAt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		postedAt_not:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		postedAt_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		postedAt_not_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		postedAt_lt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		postedAt_lte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		postedAt_gt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		postedAt_gte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_not:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		createdAt_not_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		createdAt_lt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_lte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_gt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_gte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_not:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		updatedAt_not_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		updatedAt_lt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_lte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_gt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_gte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		AND:{
+			type:"JobWhereInput",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		OR:{
+			type:"JobWhereInput",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		NOT:{
+			type:"JobWhereInput",
+			array:true,
+			arrayRequired:false,
+			required:true
+		}
+	},
+	CommitmentWhereInput:{
+		id:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_in:{
+			type:"ID",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		id_not_in:{
+			type:"ID",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		id_lt:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_lte:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_gt:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_gte:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_contains:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not_contains:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_starts_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not_starts_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_ends_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not_ends_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		title:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		title_not:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		title_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		title_not_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		title_lt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		title_lte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		title_gt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		title_gte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		title_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		title_not_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		title_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		title_not_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		title_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		title_not_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		slug_not_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		slug_lt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_lte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_gt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_gte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		jobs_every:{
+			type:"JobWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		jobs_some:{
+			type:"JobWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		jobs_none:{
+			type:"JobWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_not:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		createdAt_not_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		createdAt_lt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_lte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_gt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_gte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_not:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		updatedAt_not_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		updatedAt_lt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_lte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_gt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_gte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		AND:{
+			type:"CommitmentWhereInput",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		OR:{
+			type:"CommitmentWhereInput",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		NOT:{
+			type:"CommitmentWhereInput",
+			array:true,
+			arrayRequired:false,
+			required:true
+		}
+	},
+	DateTime: "String",
+	CityWhereInput:{
+		id:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_in:{
+			type:"ID",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		id_not_in:{
+			type:"ID",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		id_lt:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_lte:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_gt:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_gte:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_contains:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not_contains:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_starts_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not_starts_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_ends_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not_ends_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_not:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		name_not_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		name_lt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_lte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_gt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_gte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_not_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_not_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_not_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		slug_not_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		slug_lt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_lte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_gt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_gte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		country:{
+			type:"CountryWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_not:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		type_not_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		type_lt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_lte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_gt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_gte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_not_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_not_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_not_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		jobs_every:{
+			type:"JobWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		jobs_some:{
+			type:"JobWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		jobs_none:{
+			type:"JobWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_not:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		createdAt_not_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		createdAt_lt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_lte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_gt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_gte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_not:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		updatedAt_not_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		updatedAt_lt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_lte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_gt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_gte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		AND:{
+			type:"CityWhereInput",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		OR:{
+			type:"CityWhereInput",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		NOT:{
+			type:"CityWhereInput",
+			array:true,
+			arrayRequired:false,
+			required:true
+		}
+	},
+	CountryWhereInput:{
+		id:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_in:{
+			type:"ID",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		id_not_in:{
+			type:"ID",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		id_lt:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_lte:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_gt:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_gte:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_contains:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not_contains:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_starts_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not_starts_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_ends_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not_ends_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_not:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		name_not_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		name_lt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_lte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_gt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_gte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_not_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_not_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_not_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		slug_not_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		slug_lt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_lte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_gt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_gte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_not:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		type_not_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		type_lt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_lte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_gt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_gte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_not_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_not_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_not_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		isoCode:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		isoCode_not:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		isoCode_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		isoCode_not_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		isoCode_lt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		isoCode_lte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		isoCode_gt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		isoCode_gte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		isoCode_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		isoCode_not_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		isoCode_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		isoCode_not_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		isoCode_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		isoCode_not_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		cities_every:{
+			type:"CityWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		cities_some:{
+			type:"CityWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		cities_none:{
+			type:"CityWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		jobs_every:{
+			type:"JobWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		jobs_some:{
+			type:"JobWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		jobs_none:{
+			type:"JobWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_not:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		createdAt_not_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		createdAt_lt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_lte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_gt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_gte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_not:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		updatedAt_not_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		updatedAt_lt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_lte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_gt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_gte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		AND:{
+			type:"CountryWhereInput",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		OR:{
+			type:"CountryWhereInput",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		NOT:{
+			type:"CountryWhereInput",
+			array:true,
+			arrayRequired:false,
+			required:true
+		}
+	},
+	RemoteWhereInput:{
+		id:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_in:{
+			type:"ID",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		id_not_in:{
+			type:"ID",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		id_lt:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_lte:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_gt:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_gte:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_contains:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not_contains:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_starts_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not_starts_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_ends_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not_ends_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_not:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		name_not_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		name_lt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_lte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_gt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_gte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_not_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_not_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_not_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		slug_not_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		slug_lt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_lte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_gt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_gte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_not:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		type_not_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		type_lt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_lte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_gt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_gte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_not_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_not_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		type_not_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		jobs_every:{
+			type:"JobWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		jobs_some:{
+			type:"JobWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		jobs_none:{
+			type:"JobWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_not:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		createdAt_not_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		createdAt_lt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_lte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_gt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_gte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_not:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		updatedAt_not_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		updatedAt_lt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_lte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_gt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_gte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		AND:{
+			type:"RemoteWhereInput",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		OR:{
+			type:"RemoteWhereInput",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		NOT:{
+			type:"RemoteWhereInput",
+			array:true,
+			arrayRequired:false,
+			required:true
+		}
+	},
+	CompanyWhereInput:{
+		id:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_in:{
+			type:"ID",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		id_not_in:{
+			type:"ID",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		id_lt:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_lte:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_gt:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_gte:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_contains:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not_contains:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_starts_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not_starts_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_ends_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not_ends_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_not:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		name_not_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		name_lt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_lte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_gt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_gte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_not_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_not_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_not_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		slug_not_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		slug_lt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_lte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_gt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_gte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		websiteUrl:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		websiteUrl_not:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		websiteUrl_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		websiteUrl_not_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		websiteUrl_lt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		websiteUrl_lte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		websiteUrl_gt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		websiteUrl_gte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		websiteUrl_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		websiteUrl_not_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		websiteUrl_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		websiteUrl_not_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		websiteUrl_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		websiteUrl_not_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		logoUrl:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		logoUrl_not:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		logoUrl_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		logoUrl_not_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		logoUrl_lt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		logoUrl_lte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		logoUrl_gt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		logoUrl_gte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		logoUrl_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		logoUrl_not_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		logoUrl_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		logoUrl_not_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		logoUrl_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		logoUrl_not_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		jobs_every:{
+			type:"JobWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		jobs_some:{
+			type:"JobWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		jobs_none:{
+			type:"JobWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		twitter:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		twitter_not:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		twitter_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		twitter_not_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		twitter_lt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		twitter_lte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		twitter_gt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		twitter_gte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		twitter_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		twitter_not_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		twitter_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		twitter_not_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		twitter_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		twitter_not_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		emailed:{
+			type:"Boolean",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		emailed_not:{
+			type:"Boolean",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_not:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		createdAt_not_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		createdAt_lt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_lte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_gt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_gte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_not:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		updatedAt_not_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		updatedAt_lt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_lte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_gt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_gte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		AND:{
+			type:"CompanyWhereInput",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		OR:{
+			type:"CompanyWhereInput",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		NOT:{
+			type:"CompanyWhereInput",
+			array:true,
+			arrayRequired:false,
+			required:true
+		}
+	},
+	TagWhereInput:{
+		id:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_in:{
+			type:"ID",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		id_not_in:{
+			type:"ID",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		id_lt:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_lte:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_gt:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_gte:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_contains:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not_contains:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_starts_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not_starts_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_ends_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		id_not_ends_with:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_not:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		name_not_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		name_lt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_lte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_gt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_gte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_not_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_not_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		name_not_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		slug_not_in:{
+			type:"String",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		slug_lt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_lte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_gt:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_gte:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not_contains:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not_starts_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		slug_not_ends_with:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		jobs_every:{
+			type:"JobWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		jobs_some:{
+			type:"JobWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		jobs_none:{
+			type:"JobWhereInput",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_not:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		createdAt_not_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		createdAt_lt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_lte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_gt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		createdAt_gte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_not:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		updatedAt_not_in:{
+			type:"DateTime",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		updatedAt_lt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_lte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_gt:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		updatedAt_gte:{
+			type:"DateTime",
+			array:false,
+			arrayRequired:false,
+			required:false
+		},
+		AND:{
+			type:"TagWhereInput",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		OR:{
+			type:"TagWhereInput",
+			array:true,
+			arrayRequired:false,
+			required:true
+		},
+		NOT:{
+			type:"TagWhereInput",
+			array:true,
+			arrayRequired:false,
+			required:true
+		}
+	},
+	JobOrderByInput: "enum",
+	CityOrderByInput: "enum",
+	City:{
+		jobs:{
+			where:{
+				type:"JobWhereInput",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			orderBy:{
+				type:"JobOrderByInput",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			skip:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			after:{
+				type:"String",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			before:{
+				type:"String",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			first:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			last:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			}
+		}
+	},
+	Country:{
+		cities:{
+			where:{
+				type:"CityWhereInput",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			orderBy:{
+				type:"CityOrderByInput",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			skip:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			after:{
+				type:"String",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			before:{
+				type:"String",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			first:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			last:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			}
+		},
+		jobs:{
+			where:{
+				type:"JobWhereInput",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			orderBy:{
+				type:"JobOrderByInput",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			skip:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			after:{
+				type:"String",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			before:{
+				type:"String",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			first:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			last:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			}
+		}
+	},
+	CountryOrderByInput: "enum",
+	RemoteOrderByInput: "enum",
+	Remote:{
+		jobs:{
+			where:{
+				type:"JobWhereInput",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			orderBy:{
+				type:"JobOrderByInput",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			skip:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			after:{
+				type:"String",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			before:{
+				type:"String",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			first:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			last:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			}
+		}
+	},
+	Company:{
+		jobs:{
+			where:{
+				type:"JobWhereInput",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			orderBy:{
+				type:"JobOrderByInput",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			skip:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			after:{
+				type:"String",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			before:{
+				type:"String",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			first:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			last:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			}
+		}
+	},
+	TagOrderByInput: "enum",
+	Tag:{
+		jobs:{
+			where:{
+				type:"JobWhereInput",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			orderBy:{
+				type:"JobOrderByInput",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			skip:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			after:{
+				type:"String",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			before:{
+				type:"String",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			first:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			},
+			last:{
+				type:"Int",
+				array:false,
+				arrayRequired:false,
+				required:false
+			}
+		}
+	},
+	JobInput:{
+		companySlug:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:true
+		},
+		jobSlug:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:true
+		}
+	},
+	LocationsInput:{
+		value:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:true
+		}
+	},
+	LocationInput:{
+		slug:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:true
+		}
+	},
+	Mutation:{
+		subscribe:{
+			input:{
+				type:"SubscribeInput",
+				array:false,
+				arrayRequired:false,
+				required:true
+			}
+		},
+		postJob:{
+			input:{
+				type:"PostJobInput",
+				array:false,
+				arrayRequired:false,
+				required:true
+			}
+		},
+		updateJob:{
+			input:{
+				type:"UpdateJobInput",
+				array:false,
+				arrayRequired:false,
+				required:true
+			},
+			adminSecret:{
+				type:"String",
+				array:false,
+				arrayRequired:false,
+				required:true
+			}
+		},
+		updateCompany:{
+			input:{
+				type:"UpdateCompanyInput",
+				array:false,
+				arrayRequired:false,
+				required:true
+			},
+			adminSecret:{
+				type:"String",
+				array:false,
+				arrayRequired:false,
+				required:true
+			}
+		}
+	},
+	SubscribeInput:{
+		name:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:true
+		},
+		email:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:true
+		}
+	},
+	PostJobInput:{
+		title:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:true
+		},
+		commitmentId:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:true
+		},
+		companyName:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:true
+		},
+		locationNames:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:true
+		},
+		userEmail:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:true
+		},
+		description:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:true
+		},
+		applyUrl:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:true
+		}
+	},
+	UpdateJobInput:{
+		id:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:true
+		},
+		description:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:true
+		}
+	},
+	UpdateCompanyInput:{
+		id:{
+			type:"ID",
+			array:false,
+			arrayRequired:false,
+			required:true
+		},
+		logoUrl:{
+			type:"String",
+			array:false,
+			arrayRequired:false,
+			required:true
+		}
+	}
+}
+
+const ReturnTypes = {
+	Query:{
+		jobs:"Job",
+		job:"Job",
+		locations:"Location",
+		city:"City",
+		country:"Country",
+		remote:"Remote",
+		commitments:"Commitment",
+		cities:"City",
+		countries:"Country",
+		remotes:"Remote",
+		companies:"Company"
+	},
+	Job:{
+		id:"ID",
+		title:"String",
+		slug:"String",
+		commitment:"Commitment",
+		cities:"City",
+		countries:"Country",
+		remotes:"Remote",
+		description:"String",
+		applyUrl:"String",
+		company:"Company",
+		tags:"Tag",
+		isPublished:"Boolean",
+		isFeatured:"Boolean",
+		locationNames:"String",
+		userEmail:"String",
+		postedAt:"DateTime",
+		createdAt:"DateTime",
+		updatedAt:"DateTime"
+	},
+	Commitment:{
+		id:"ID",
+		title:"String",
+		slug:"String",
+		jobs:"Job",
+		createdAt:"DateTime",
+		updatedAt:"DateTime"
+	},
+	City:{
+		id:"ID",
+		name:"String",
+		slug:"String",
+		country:"Country",
+		type:"String",
+		jobs:"Job",
+		createdAt:"DateTime",
+		updatedAt:"DateTime"
+	},
+	Country:{
+		id:"ID",
+		name:"String",
+		slug:"String",
+		type:"String",
+		isoCode:"String",
+		cities:"City",
+		jobs:"Job",
+		createdAt:"DateTime",
+		updatedAt:"DateTime"
+	},
+	Remote:{
+		id:"ID",
+		name:"String",
+		slug:"String",
+		type:"String",
+		jobs:"Job",
+		createdAt:"DateTime",
+		updatedAt:"DateTime"
+	},
+	Company:{
+		id:"ID",
+		name:"String",
+		slug:"String",
+		websiteUrl:"String",
+		logoUrl:"String",
+		jobs:"Job",
+		twitter:"String",
+		emailed:"Boolean",
+		createdAt:"DateTime",
+		updatedAt:"DateTime"
+	},
+	Tag:{
+		id:"ID",
+		name:"String",
+		slug:"String",
+		jobs:"Job",
+		createdAt:"DateTime",
+		updatedAt:"DateTime"
+	},
+	Location:{
+		id:"ID",
+		slug:"String",
+		name:"String",
+		type:"String"
+	},
+	Mutation:{
+		subscribe:"User",
+		postJob:"Job",
+		updateJob:"Job",
+		updateCompany:"Company"
+	},
+	User:{
+		id:"ID",
+		name:"String",
+		email:"String",
+		subscribe:"Boolean",
+		createdAt:"DateTime",
+		updatedAt:"DateTime"
+	}
+}
+
+
+class GraphQLError extends Error {
+    constructor(response) {
+      super("");
+      this.response = response;
+      console.error(response);
+    }
+    toString() {
+      return "GraphQL Response Error";
+    }
+  }
+
+
+
+const ScalarResolver = (scalar, value) => {
+  switch (scalar) {
+    case 'String':
+      return  `${JSON.stringify(value)}`;
+    case 'Int':
+      return `${value}`;
+    case 'Float':
+      return `${value}`;
+    case 'Boolean':
+      return `${value}`;
+    case 'ID':
+      return `"${value}"`;
+    case 'enum':
+      return `${value}`;
+    case 'scalar':
+      return `${value}`;
+    default:
+      return false;
+  }
+};  
+
+
+const TypesPropsResolver = ({
+    value,
+    type,
+    name,
+    key,
+    blockArrays
+}) => {
+    if (value === null) {
+        return `null`;
+    }
+    let resolvedValue = AllTypesProps[type][name];
+    if (key) {
+        resolvedValue = resolvedValue[key];
+    }
+    if (!resolvedValue) {
+        throw new Error(`Cannot resolve ${type} ${name}${key ? ` ${key}` : ''}`)
+    }
+    const typeResolved = resolvedValue.type;
+    const isArray = resolvedValue.array;
+    const isArrayRequired = resolvedValue.arrayRequired;
+    if (typeof value === 'string' && value.startsWith(`ZEUS_VAR$`)) {
+        const isRequired = resolvedValue.required ? '!' : '';
+        let t = `${typeResolved}`;
+        if (isArray) {
+          if (isRequired) {
+              t = `${t}!`;
+          }
+          t = `[${t}]`;
+          if(isArrayRequired){
+            t = `${t}!`;
+          }
+        }else{
+          if (isRequired) {
+                t = `${t}!`;
+          }
+        }
+        return `\$${value.split(`ZEUS_VAR$`)[1]}__ZEUS_VAR__${t}`;
+    }
+    if (isArray && !blockArrays) {
+        return `[${value
+        .map((v) => TypesPropsResolver({ value: v, type, name, key, blockArrays: true }))
+        .join(',')}]`;
+    }
+    const reslovedScalar = ScalarResolver(typeResolved, value);
+    if (!reslovedScalar) {
+        const resolvedType = AllTypesProps[typeResolved];
+        if (typeof resolvedType === 'object') {
+        const argsKeys = Object.keys(resolvedType);
+        return `{${argsKeys
+            .filter((ak) => value[ak] !== undefined)
+            .map(
+            (ak) => `${ak}:${TypesPropsResolver({ value: value[ak], type: typeResolved, name: ak })}`
+            )}}`;
+        }
+        return ScalarResolver(AllTypesProps[typeResolved], value);
+    }
+    return reslovedScalar;
+};
+
+
+const isArrayFunction = (
+  parent,
+  a
+) => {
+  const [values, r] = a;
+  const [mainKey, key, ...keys] = parent;
+  const keyValues = Object.keys(values).filter((k) => typeof values[k] !== 'undefined');
+
+  if (!keys.length) {
+      return keyValues.length > 0
+        ? `(${keyValues
+            .map(
+              (v) =>
+                `${v}:${TypesPropsResolver({
+                  value: values[v],
+                  type: mainKey,
+                  name: key,
+                  key: v
+                })}`
+            )
+            .join(',')})${r ? traverseToSeekArrays(parent, r) : ''}`
+        : traverseToSeekArrays(parent, r);
+    }
+
+  const [typeResolverKey] = keys.splice(keys.length - 1, 1);
+  let valueToResolve = ReturnTypes[mainKey][key];
+  for (const k of keys) {
+    valueToResolve = ReturnTypes[valueToResolve][k];
+  }
+
+  const argumentString =
+    keyValues.length > 0
+      ? `(${keyValues
+          .map(
+            (v) =>
+              `${v}:${TypesPropsResolver({
+                value: values[v],
+                type: valueToResolve,
+                name: typeResolverKey,
+                key: v
+              })}`
+          )
+          .join(',')})${r ? traverseToSeekArrays(parent, r) : ''}`
+      : traverseToSeekArrays(parent, r);
+  return argumentString;
+};
+
+
+const resolveKV = (k, v) =>
+  typeof v === 'boolean' ? k : typeof v === 'object' ? `${k}{${objectToTree(v)}}` : `${k}${v}`;
+
+
+const objectToTree = (o) =>
+  `{${Object.keys(o).map((k) => `${resolveKV(k, o[k])}`).join(' ')}}`;
+
+
+const traverseToSeekArrays = (parent, a) => {
+  if (!a) return '';
+  if (Object.keys(a).length === 0) {
+    return '';
+  }
+  let b = {};
+  if (Array.isArray(a)) {
+    return isArrayFunction([...parent], a);
+  } else {
+    if (typeof a === 'object') {
+      Object.keys(a)
+        .filter((k) => typeof a[k] !== 'undefined')    
+        .map((k) => {
+        if (k === '__alias') {
+          Object.keys(a[k]).map((aliasKey) => {
+            const aliasOperations = a[k][aliasKey];
+            const aliasOperationName = Object.keys(aliasOperations)[0];
+            const aliasOperation = aliasOperations[aliasOperationName];
+            b[
+              `${aliasOperationName}__alias__${aliasKey}: ${aliasOperationName}`
+            ] = traverseToSeekArrays([...parent, aliasOperationName], aliasOperation);
+          });
+        } else {
+          b[k] = traverseToSeekArrays([...parent, k], a[k]);
+        }
+      });
+    } else {
+      return '';
+    }
+  }
+  return objectToTree(b);
+};  
+
+
+const buildQuery = (type, a) =>
+  traverseToSeekArrays([type], a)  
+
+
+const inspectVariables = (query) => {
+  const regex = /\$\b\w*__ZEUS_VAR__\[?[^!^\]^\s^,^\)^\}]*[!]?[\]]?[!]?/g;
+  let result;
+  const AllVariables = [];
+  while ((result = regex.exec(query))) {
+    if (AllVariables.includes(result[0])) {
+      continue;
+    }
+    AllVariables.push(result[0]);
+  }
+  if (!AllVariables.length) {
+    return query;
+  }
+  let filteredQuery = query;
+  AllVariables.forEach((variable) => {
+    while (filteredQuery.includes(variable)) {
+      filteredQuery = filteredQuery.replace(variable, variable.split('__ZEUS_VAR__')[0]);
+    }
+  });
+  return `(${AllVariables.map((a) => a.split('__ZEUS_VAR__'))
+    .map(([variableName, variableType]) => `${variableName}:${variableType}`)
+    .join(', ')})${filteredQuery}`;
+};
+
+
+const queryConstruct = (t, tName) => (o) => `${t.toLowerCase()}${inspectVariables(buildQuery(tName, o))}`;  
+
+
+const fullChainConstruct = (fn) => (t,tName) => (o, variables) => fn(queryConstruct(t, tName)(o), variables).then(r => { 
+  seekForAliases(r)
+  return r
+});
+
+const fullChainConstructor = (
+  fn,
+  operation,
+  key,
+) =>
+  ((o, variables) => fullChainConstruct(fn)(operation, key)(o, variables))
+
+
+const fullSubscriptionConstruct = (fn) => (
+  t,
+  tName,
+) => (o, variables) =>
+  fn(queryConstruct(t, tName)(o), variables);
+  
+const fullSubscriptionConstructor = (
+  fn,
+  operation,
+  key,
+) =>
+  ((o, variables) => fullSubscriptionConstruct(fn)(operation, key)(o, variables))
+
+
+const seekForAliases = (o) => {
+  const traverseAlias = (value) => {
+    if (Array.isArray(value)) {
+      value.forEach(seekForAliases);
+    } else {
+      if (typeof value === 'object') {
+        seekForAliases(value);
+      }
+    }
+  };
+  if (typeof o === 'object' && o) {
+    const keys = Object.keys(o);
+    if (keys.length < 1) {
+      return;
+    }
+    keys.forEach((k) => {
+      const value = o[k];
+      if (k.indexOf('__alias__') !== -1) {
+        const [operation, alias] = k.split('__alias__');
+        o[alias] = {
+          [operation]: value
+        };
+        delete o[k];
+      }
+      traverseAlias(value);
+    });
+  }
+};
+
+
+const $ = (t) => `ZEUS_VAR$${t.join('')}`;
+
+const ZeusSelect = () => (t) => t
+
+const resolverFor = (
+  type,
+  field,
+  fn
+) => fn;
+
+
+const handleFetchResponse = response => {
+  if (!response.ok) {
+    return new Promise((resolve, reject) => {
+      response.text().then(text => {
+        try { reject(JSON.parse(text)); }
+        catch (err) { reject(text); }
+      }).catch(reject);
+    });
+  }
+  return response.json();
+};
+
+const apiFetch = (options) => (query, variables = {}) => {
+    const fetchFunction = fetch;
+    let queryString = query;
+    let fetchOptions = options[1] || {};
+    if (fetchOptions.method && fetchOptions.method === 'GET') {
+      queryString = encodeURIComponent(query);
+      return fetchFunction(`${options[0]}?query=${queryString}`, fetchOptions)
+        .then(handleFetchResponse)
+        .then((response) => {
+          if (response.errors) {
+            throw new GraphQLError(response);
+          }
+          seekForAliases(response.data)
+          return response.data;
+        });
+    }
+    return fetchFunction(`${options[0]}`, {
+      body: JSON.stringify({ query: queryString, variables }),
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      ...fetchOptions
+    })
+      .then(handleFetchResponse)
+      .then((response) => {
+        if (response.errors) {
+          throw new GraphQLError(response);
+        }
+        seekForAliases(response.data)
+        return response.data;
+      });
+  };
+
+const apiSubscription = (options) => (
+    query,
+    variables,
+  ) => {
+    try {
+      const queryString = options[0] + '?query=' + encodeURIComponent(query);
+      const wsString = queryString.replace('http', 'ws');
+      const host = (options.length > 1 && options[1]?.websocket?.[0]) || wsString;
+      const webSocketOptions = options[1]?.websocket || [host];
+      const ws = new WebSocket(...webSocketOptions);
+      return {
+        ws,
+        on: (e) => {
+          ws.onmessage = (event) => {
+            if(event.data){
+              const parsed = JSON.parse(event.data)
+              const data = parsed.data
+              if (data) {
+                seekForAliases(data);
+              }
+              return e(data);
+            }
+          };
+        },
+        off: (e) => {
+          ws.onclose = e;
+        },
+        error: (e) => {
+          ws.onerror = e;
+        },
+        open: (e) => {
+          ws.onopen = e;
+        },
+      };
+    } catch {
+      throw new Error('No websockets implemented');
+    }
+  };
+
+  
+const Thunder = (fn) => ({
+  query: fullChainConstructor(fn,'query', 'Query'),
+mutation: fullChainConstructor(fn,'mutation', 'Mutation')
+});
+
+const Chain = (...options) => ({
+  query: fullChainConstructor(apiFetch(options),'query', 'Query'),
+mutation: fullChainConstructor(apiFetch(options),'mutation', 'Mutation')
+});
+const Zeus = {
+  query: (o) => queryConstruct('query', 'Query')(o),
+mutation: (o) => queryConstruct('mutation', 'Mutation')(o)
+};
+const Cast = {
+  query: (o) => (b) => o,
+mutation: (o) => (b) => o
+};
+const Selectors = {
+  query: ZeusSelect(),
+mutation: ZeusSelect()
+};
+    
+
+const Gql = Chain('https://api.graphql.jobs/')
+
+  var html = typeof html === "undefined" ? (strings, ...expr) => {
+    let str = '';
+    strings.forEach((string, i) => {
+        str += string + (expr[i] || '');
+    });
+    return str;
+  } : html
+  var css = typeof css === "undefined" ? (strings, ...expr) => {
+    let str = '';
+    strings.forEach((string, i) => {
+        str += string + (expr[i] || '');
+    });
+    return str;
+  } : css
+  
+
+const FaqTile = ({ question, answer, open }) => {
+  return html`
+    <details class="p-4 mb-2 border-b">
+      <summary class="font-semibold">${question}</summary>
+      <p class="mt-1">${answer}</p>
+    </details>
+  `;
+}
+const code = "const data = await Gql.query({\n  jobs: [\n    {},\n    { company: { name: true }, description: true, title: true, applyUrl: true },\n  ],\n});\n\nconst PrimaryButton = ({ text, href }) => html`\n  <a\n    class=\"inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow\"\n    href=\"${href}\"\n    >${text}\n  </a>\n`;\n\nreturn html`\n  <div class=\"p-4\">\n    ${data.jobs\n      .slice(0, 10)\n      .map(\n        (j) => html`<details class=\"mb-4\">\n          <summary class=\"font-bold text-blue-500\">\n            ${j.company.name + \"-\" + j.title}\n          </summary>\n          <article class=\"py-4 text-gray-400\">\n            <section class=\"markdown\">${md`${j.description}`}</section>\n          </article>\n          ${PrimaryButton({ text: \"Apply Now\", href: j.applyUrl })}\n        </details>`\n      )\n      .join(\"\")}\n  </div>\n`;"
+const configCode = "{\n  \"url\": \"https://api.graphql.jobs/\",\n  \"out\": \"./out\",\n  \"in\": \"./pages\"\n}"
+const afterRender = async () => {
+  const hljs = await import("https://cdn.skypack.dev/highlight.js");
+  const cbl = document.getElementById("code");
+  const configBlock = document.getElementById("config");
+  cbl.innerText = code;
+  configBlock.innerText = configCode;
+  setTimeout(() => {
+    hljs.default.highlightElement(cbl, { language: "javascript" });
+    hljs.default.highlightElement(configBlock, { language: "json" });
+  }, 500);
+};
+afterRender();
+    </script>
+  </head>
+  <body>
+    
+  <style>
+    @import "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/default.min.css";
+  </style>
+  <div class="container mx-auto">
+    <section class="py-12 px-4 w-full">
+    <div class="w-full mx-auto">
+      <span class="text-2xl font-semibold py-24">GraphQL >_ SSG</span>
+      <h2 class="text-5xl mt-2 mb-6 leading-tight font-semibold font-heading">
+        Create GraphQL data driven static websites in no time.
+      </h2>
+      <p class="mb-8 text-gray-400 text-xl leading-relaxed">What you get is fully autocomplete driven GraphQL Client injected in Static Website Generator. Create landing pages and leverage the power of GraphQL. Connect to powerful headless CMS of choice, create your own backend or play with fake data.</p>
+      <div>
+        
+  <a
+    class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
+    href="https://github.com/graphql-editor/graphql-ssg"
+    >GitHub</a
+  >
+
+        
+  <a class="text-indigo-600 hover:underline" href="https://app.graphqleditor.com/explore-projects/feature-mole?visibleMenu=mock">Test Live</a>
+
+      </div>
+    </div>
+  </section>
+    
+  <section class="p-4">
+    <div class="flex flex-wrap -mx-8">
+      
+  <div class="md:w-1/3 py-4 px-8 mb-4 md:mb-0">
+    <h3 class="text-2xl font-semibold font-heading">Great Speed</h3>
+    <p class="my-4 text-gray-400 leading-relaxed">Create websites and deploy them instantly. Experience the flow you've never experienced before</p>
+  </div>
+
+      
+  <div class="md:w-1/3 py-4 px-8 mb-4 md:mb-0">
+    <h3 class="text-2xl font-semibold font-heading">Instant availability</h3>
+    <p class="my-4 text-gray-400 leading-relaxed">GraphQL SSG websites can be deployed instantly using GraphQL Editor JAMStack.</p>
+  </div>
+
+      
+  <div class="md:w-1/3 py-4 px-8 mb-4 md:mb-0">
+    <h3 class="text-2xl font-semibold font-heading">Nothing to learn</h3>
+    <p class="my-4 text-gray-400 leading-relaxed">It is easy to start with basic HTML and CSS knowledge. GraphQL client is autocompleted thanks to GraphQL Zeus.</p>
+  </div>
+
+    </div>
+  </section>
+
+    <h3 class="text-lg font-semibold text-blue-600 p-4 mt-10">
+      Example: Display companies looking for people to work in GraphQL industry
+    </h3>
+    <label class="px-4">graphql-ssg.json</label>
+    <pre class="p-4"><code id="config"></code></pre>
+    <label class="px-4">index.zeus.js</label>
+    <pre class="p-4"><code id="code"></code></pre>
+    <h3 class="text-lg font-semibold text-blue-600 p-4 mt-10">
+      Example: Result
+    </h3>
+    <div class="p-4">
+      <details class="mb-4">
+            <summary class="font-bold text-blue-500">
+              Senior Fullstack Engineer - Platform at Segment
+            </summary>
+            <article class="py-4 text-gray-400">
+              <section class="markdown"><h1>**Overview **</h1>
+<p>At Segment, we believe companies should be able to send their customer data wherever they want, whenever they want, with no fuss. We make this easy with a single pipeline that collects, stores, filters, transforms, and sends data to hundreds of business tools with the flip of a switch. Historically, we’ve built integrations with more than 250 different customer data tools ourselves(think Mixpanel, Google Analytics, Stripe).This March, we opened up our <a href="https://segment.com/partners/developer-center/">++<strong>Developer Center</strong>++</a>. For the first time, new companies could build integrations upon Segment data, using our self-service workflow. In that time, we’ve onboarded <strong>60 separate companies</strong>, each of whom built endpoints to work with our spec. We're now looking for a Senior Fullstack Engineer to help us expand our platform…we want to offer every kind of developer (partners, customers, and indie devs) the means to use Segment data.</p>
+<h2><strong>Project we are working on:</strong></h2>
+<p>We want to give our users and partners:</p>
+<ul>
+<li>the ability to submit custom logic which we run as part of a high-throughput pipeline (think high throughput Lambda at 1/1000th the cost)</li>
+<li>the ability to query Segment data on the fly, from a big multi-tenant database (online data of our user’s users)</li>
+<li>new superpowers to combine, modify, and transform data coming through the pipeline (createa visual chain of transformations and steps)</li>
+</ul>
+<p>We want to do all of this across a pipeline which processes hundreds of thousands of events per second for some of the worlds largest brands, like Github, Nike, and Intuit.</p>
+<h2><strong>What We Do:</strong></h2>
+<ul>
+<li>We implement <a href="https://segment.com/blog/allocation-efficiency-in-high-performance-go-services/">++high-performance data pipelines with Go, Kafka, and Docker++</a></li>
+<li>We’re focused on building incredible developer experiences, with tools like our debugger, <a href="https://segment.com/blog/new-data-visibility-features/">++event delivery view++</a>, and asynchronous client libraries.</li>
+<li>We want to give our users ‘data superpowers’</li>
+<li>We handle <a href="https://segment.com/blog/introducing-centrifuge/">++billions of messages per day++</a>, putting a <a href="https://segment.com/blog/exactly-once-delivery/">++premium on correctness++</a></li>
+</ul>
+<h2><strong>Who</strong> <strong>We're</strong> <strong>Looking</strong> <strong>For:</strong></h2>
+<ul>
+<li>You come from a background of delivering projects from start to finish</li>
+<li>You love the challenge of building a platform, where users will surprise and delight you with what they build</li>
+<li>You feel relatively comfortable up and down the stack (both frontend and backend)</li>
+</ul>
+<h2><strong>Tools we use:</strong></h2>
+<ul>
+<li>AWS (EC2, ECS, RDS, S3, and more!)</li>
+<li>Docker</li>
+<li>GraphQL</li>
+<li>Typescript</li>
+<li>React</li>
+</ul>
+<h2><strong>Requirements:</strong></h2>
+<ul>
+<li>Strong track record of delivering product and internal systems</li>
+<li>Great computing fundamentals</li>
+<li>Experience at many levels of the stack (building out some frontend and some backend code)</li>
+</ul>
+<p>Segment is an equal opportunity employer. We believe that everyone should receive equal consideration and treatment in all terms and conditions of employment regardless of sex, gender (including pregnancy, childbirth, breastfeeding or related medical conditions), sexual orientation, gender identity, gender expression, race, color, religion, creed, national origin, ancestry, age (over 40), physical disability, mental disability, medical condition, genetic information, marital status, domestic partner status, military or veteran status, height, weight, AIDS/HIV status, and any other protected category under federal, state or local law. Pursuant to the San Francisco Fair Chance Ordinance, we will consider for employment qualified applicants with arrest and conviction records.</p>
+</section>
+            </article>
+            
+  <a
+    class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
+    href="https://grnh.se/2d8f45d71"
+    >Apply Now</a
+  >
+
+          </details><details class="mb-4">
+            <summary class="font-bold text-blue-500">
+              Full Stack JavaScript Developer at Unrealists
+            </summary>
+            <article class="py-4 text-gray-400">
+              <section class="markdown"><p>We are looking for a strong (Midlevel to Senior) Javascript Developer with to join our team. You will be working on extending and maintaining frontend code and serverless backend.</p>
+<p>Full-time or part-time. In Berlin or remote.</p>
+<p>​</p>
+<p><strong>Job Description</strong></p>
+<ul>
+<li>Proven knowledge in JavaScript related to design, analysis, development and maintenance</li>
+<li>Understanding the nature of asynchronous programming and its quirks and workarounds</li>
+<li>Fundamental knowledge about design principles behind a scalable application</li>
+<li>Good understanding of security and data protection concepts</li>
+<li>Well rounded knowledge of application architecture</li>
+<li>Ability to form and communicate architecture decisions</li>
+<li>Focus on code quality and deliver projects with high business impact</li>
+</ul>
+<p><strong>Qualifications</strong></p>
+<ul>
+<li>Good verbal and written English communication skills (German is a plus but no must)</li>
+<li>Experience in serverless architecture (firebase, serverless, aws lambda, ...)</li>
+<li>Experience in Redux or similar state management framework</li>
+<li>Degree in Computer Science or related field with 3+ years of experience on frontend development in a startup or similar work environment</li>
+<li>Experience with modern JavaScript frameworks like React, AngularJS, Vue etc</li>
+<li>The ability to rapidly learn and explain technical concepts</li>
+<li>A passion for making beautiful, smooth, delightful web experiences</li>
+<li>Ability to use Git and experience with Jira project management software or similar</li>
+<li>An eagerness to learn and teach new disciplines, methodologies, stay up to date with the community and develop best practices</li>
+</ul>
+<p><strong>Good to have</strong></p>
+<ul>
+<li>Experience with web security/pen testing</li>
+<li>Working knowledge of cloud platforms like AWS, Azure, Digital Ocean</li>
+<li>Working experience with Agile Methodology and well versed with tools like Jira</li>
+<li>Experience with API integrations like (JWT, Social Media Services)</li>
+</ul>
+</section>
+            </article>
+            
+  <a
+    class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
+    href="https://docs.google.com/forms/d/1zlEfXsBMwxmQSHzAsYV-ZNM896yMoV4NHRwPg-GhsEE/"
+    >Apply Now</a
+  >
+
+          </details><details class="mb-4">
+            <summary class="font-bold text-blue-500">
+              Senior Software Engineer, API Development at DeepCrawl
+            </summary>
+            <article class="py-4 text-gray-400">
+              <section class="markdown"><p><strong>Overview of DeepCrawl</strong></p>
+<p>DeepCrawl is the world’s most comprehensive website crawler, providing actionable data for flawless website architecture. By identifying and monitoring key issues that could affect SEO performance, we empower our clients to optimize their websites for users and search engines alike. This enables our clients to drive further traffic and revenue from their organic channel.</p>
+<p>Winner of Best SEO Software at the European Search Awards, we're proud to be trusted by some of the world's top SEOs in over 50 countries.</p>
+<p>Our ultimate vision is to become the tool of choice for marketers across the world - letting them crawl and analyse all of their websites to identify key insights. To help us support that vision we’re looking for bright, ambitious, and passionate talent to join us across our London, New York City, and Krakow offices.</p>
+<p>We are looking for the best people around the world, so foreign nationals are welcome to apply, we can sponsor your visa if you are interested in relocating.</p>
+<p><strong>The role</strong></p>
+<p>At DeepCrawl we are solving big data problems. We crawl absolutely huge websites, producing many terabytes of data and even more after we process it. We then apply queries at scale in order to provide world class insights to our customers who need to manage their SEO.</p>
+<p>In this role you will be part of the team responsible for re-imagining existing DeepCrawl API using TypeScript and GraphQL. You will be creating testable, efficient, clean and maintainable code following DDD + BDD practices.</p>
+<p><strong>Our stack</strong></p>
+<p>TypeScript, Elasticsearch, PostgreSQL, Redis, Amazon ECS, MySQL, Docker, Terraform, Node.Js, Apollo server + GraphQL (type-graphql), TypeORM, Cucumber, Jest, TSLint, Love</p>
+<p><strong>What you’ll get to do</strong></p>
+<ul>
+<li>Contribute directly to the development of our new GraphQL API</li>
+<li>Develop new features and move existing API feature to the new API</li>
+<li>Creation of possible new microservices as needed for new tools the company creates</li>
+<li>Come up with creative solutions to scale microservices for different cloud applications</li>
+<li>Develop software following DDD + BDD practices and working in Agile Kanban environment.</li>
+<li>Code review</li>
+<li>Requirements</li>
+</ul>
+<p><strong>What you’ll bring</strong></p>
+<ul>
+<li>Solid software engineering experience</li>
+<li>Extensive background developing large node.js applications in TypeScript</li>
+<li>Adherence to always writing your test first and code against that failing test</li>
+<li>A love for clean code concepts by Bob C Martin</li>
+<li>Experience with .feature files and ability to write step definitions against them</li>
+<li>Familiarity with example and rule mapping in a 3 amigo session</li>
+<li>Passion for learning and desire to help us learn as well</li>
+<li>Belief in the craft of software engineering, but are pragmatic when necessary</li>
+<li>Respect whilst challenging your peers and welcome their reciprocated challenge</li>
+</ul>
+<p><strong>We’d especially love it if you have</strong></p>
+<ul>
+<li>Developed and used GraphQL APIs.</li>
+<li>Exposure to software architectures like Hexagonal, Onion, DDD</li>
+<li>A keen understanding of software design patterns and where each can be applied</li>
+<li>Worked with ElasticSearch.</li>
+<li>Lead and mentored junior developers</li>
+<li>Flirted with other typed languages such as C#, Java, Scala etc</li>
+</ul>
+<h3><strong>Benefits</strong></h3>
+<p><strong>Why work with DeepCrawl?</strong></p>
+<ul>
+<li>We're an innovative and fast growing tech start-up</li>
+<li>Raised our series A investment from a prominent venture capitalist</li>
+<li>An international business, with clients all over the world and offices across London, New York City and Krakow</li>
+<li>Flexible working from home &amp; remote working policy</li>
+<li>Potential to travel to other offices</li>
+<li>Annual personal education budget</li>
+<li>Company trips</li>
+<li>Monthly office drinks &amp; lunches</li>
+<li>Comprehensive private healthcare cover</li>
+<li>Company option shares participation</li>
+<li>Newest hardware</li>
+</ul>
+<p>If you’re looking for an exciting opportunity to work with a fast-growing and innovative tech company, then please get in touch!</p>
+</section>
+            </article>
+            
+  <a
+    class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
+    href="mailto:karolis.mazukna@deepcrawl.com"
+    >Apply Now</a
+  >
+
+          </details><details class="mb-4">
+            <summary class="font-bold text-blue-500">
+              Experienced Backend Engineer - Go at Theorem
+            </summary>
+            <article class="py-4 text-gray-400">
+              <section class="markdown"><p>Do you enjoy collaborating in a consultative environment and guiding people using best practices to achieve great results? Do you want to influence and contribute to the growth of a high performing, quality focused team? If so, Theorem wants to know more about you!</p>
+<p><a href="http://theorem.co/">Theorem</a> is a software consultancy that believes in simplicity in software design. We deliver solutions for startups and enterprises - You can see our <a href="https://theorem.co/portfolio">portfolio</a> to learn more about the results we’ve delivered for our clients.</p>
+<p>This is a remote role. We are a remote first company with offices in Los Angeles and New York. We have team members all around the world.</p>
+<p>Please note this role may require occasional travel to client sites within the USA. Candidates located within UTC - 3 to UTC - 8 will be given priority for team time zone alignment.</p>
+<p>At Theorem you can make a significant impact while enjoying a flexible work schedule.</p>
+<p><strong>As Experienced Go Engineer  at Theorem You Will:</strong></p>
+<ul>
+<li>Architect components and build distributed systems, APIs, and web applications</li>
+<li>Write lots of high performing Go (golang)</li>
+<li>Tackle complex problems in distributed computing, fault-tolerant storage, distributed queuing</li>
+<li>Build high quality, well-designed, and scalable SaaS platform</li>
+<li>Work with Docker, Kubernetes, and NoSQL databases</li>
+<li>Work with product designers and clients to clarify requirements, prototype functionality and build features and products</li>
+<li>Participate in code and design reviews, teaching and learning from other engineers</li>
+<li>Plan, estimate and prioritize work in a collaborative and distributed team</li>
+</ul>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li>5+ years of relevant professional experience</li>
+<li>1+ years working with Go and 3+ with at least one other programming language</li>
+<li>Previous experience collaborating on highly distributed teams</li>
+<li>Possess a passion for software development</li>
+<li>Possess a drive to get things done</li>
+<li>Experience working within an Agile/Scrum environment</li>
+<li>Open-minded and demonstrates a passion for continuously learning</li>
+<li>Possess a strong and reliable Internet connection</li>
+<li>Align a portion of your day with the business hours of Pacific Time Zone - UTC - 8</li>
+</ul>
+<p><strong>Skills that would be nice to have:</strong></p>
+<ul>
+<li>Previous consulting experience</li>
+<li>Experience building service-oriented architectures</li>
+<li>Experience building non-REST APIs such as GraphQL</li>
+<li>Experience with JavaScript (ES6) and modern web development tools such as Webpack, React, and GraphQL</li>
+</ul>
+<p><strong>About Theorem</strong></p>
+<p>Theorem is a team of experts steeped in the theory and practice of mathematics and computer science. This is the core of our iterative, hypothesis-driven process. We are craftspeople who build amazing products for some of the largest global household names. We believe in cultivating a high degree of leadership and technical excellence in all of our team members. Together we build applications that solve our customers' business-critical problems.</p>
+<p>While we have offices in LA and New York, we work remotely with team members around the world</p>
+<ul>
+<li>100% REMOTE - Work from your remote location if you are not called to travel to client site</li>
+<li>TEAM RETREATS - We get together at an inspiring location to meet, work and play</li>
+<li>HEALTHY BODY, HEALTHY MIND - HAPPY TEAM - We offer vacation and support healthy lifestyles through our physical fitness and continuing education benefits program.</li>
+</ul>
+<p><em>Theorem expects team members to be honest, kind, trustworthy, and operate with integrity. Discrimination and all unlawful harassment (including sexual harassment) in employment is not tolerated. We encourage success based on our individual merits and abilities, and all decisions regarding recruitment, hiring, promotion, compensation, skills development decisions such as training, and all other terms and conditions of our relationship, will be made without regard to race, nationality, national origin, citizenship status, employment engagement status, ethnicity, ethnic origin, color, creed, religion, belief, age, marital status, pregnancy, gender, gender identity, sexual preference, lifestyle, social class, military status, disability, physical features, or any other protected status. We oppose all forms of unlawful or unfair discrimination.</em></p>
+<p><em>Theorem is an equal opportunity employer.</em></p>
+<p><em>No statements by Theorem are intended to create an offer of employment unless made in writing signed by an officer of the company and no offer shall become effective unless countersigned by the prospective employee.</em></p>
+</section>
+            </article>
+            
+  <a
+    class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
+    href="https://theorem.applytojob.com/apply/pfoWyqGnlh"
+    >Apply Now</a
+  >
+
+          </details><details class="mb-4">
+            <summary class="font-bold text-blue-500">
+              Senior Software Engineer - Frontend at Close
+            </summary>
+            <article class="py-4 text-gray-400">
+              <section class="markdown"><p><strong>About Us</strong></p>
+<p>At <a href="https://close.com/">Close</a>, we're building the sales communication platform of the future. With our roots as the very first sales CRM to include built-in calling, we're leading the industry toward eliminating manual processes and helping companies to close more deals (faster). Since our founding in 2013, we've grown to become a profitable, 100% globally distributed team of ~33 high-performing, happy people that are dedicated to building a product our customers love.</p>
+<p>Our app’s frontend is a single-page JavaScript web app mostly written in React (originally built with Backbone.js). We bundle with Webpack and target only modern browsers. We test with Enzyme and Mocha run via Puppeteer. Our UI updates in near real-time and is written in LESS/CSS (with flexbox and grid layout) using BEM methodology and takes advantage of fun technologies like Websockets and WebRTC.</p>
+<p>We care about performance (e.g. route-based code splitting), maintainability, and testability of our frontend code. We sweat the UI/UX details and work collaboratively with the Product team throughout the design process. This means diving into lo-fi Freehand wireframes, and communicating continuously when those ideas are brought to life using Sketch/Abstract and code.</p>
+<p>Our frontend app is built on top of our REST API &amp; GraphQL endpoints. Our backend <a href="https://stackshare.io/close-crm/close">tech stack</a> consists of Python/Flask, MongoDB, Postgres, Elasticsearch, and Redis. We run our services in Docker on AWS.
+We ❤ open source – using dozens of open source projects with contributions to many of them, and released some of our own like <a href="https://github.com/closeio/mic-recorder-to-mp3">Microphone Recorder to Mp3</a>, <a href="https://github.com/closeio/filevalidator.js">filevalidator.js</a>, <a href="https://github.com/closeio/addresscompiler">addresscompiler</a>, <a href="https://github.com/closeio/backbone.mousetrap">backbone.mousetrap</a>and more at <a href="https://github.com/closeio">https://github.com/closeio</a>.</p>
+<p><strong>About You</strong></p>
+<p>We're looking for an experienced full-time Frontend Software Engineer to join our engineering team. Someone who has a solid understanding of web technologies and wants to help design, implement, and launch major user-facing features.</p>
+<p>You should have senior level experience (~5 years) building modern frontend applications in JavaScript, HTML, and CSS, with at least 3 years of that experience using a JS framework (React, Vue, Angular, Backbone etc).</p>
+<p>You should have significant experience designing, debugging, and optimizing frontend applications to make them fast and reliable. You have significant experience with REST APIs and thoroughly understand HTTP requests. You have experience participating in code reviews and providing overall code quality suggestions to help maintain the structure and quality of the codebase.
+You should have great product sense and be able to think through user experience issues before diving into the code, and you exhibit a love for great UI.</p>
+<p>You’re comfortable working in a fast-paced environment with a small and talented team where you're supported in your efforts to grow professionally. You are able to manage your time well, communicate effectively and collaborate in a fully distributed team.
+You are located in an American or European time zone.</p>
+<h3><strong>Bonus points if you...</strong></h3>
+<ul>
+<li>Experience implementing real-time (e.g. websockets, polling, etc.) web apps</li>
+<li>Experience working with GraphQL endpoints</li>
+<li>An eye for design and experience with Sketch, Abstract, Photoshop, or similar</li>
+<li>Led small project teams building and launching features</li>
+<li>Contributed open source code (core or plugins) for a popular frontend framework such as React, Vue, or Angular</li>
+<li>Built B2B SaaS products</li>
+<li>Experience with sales or sales tools</li>
+</ul>
+<h3><strong>Come help us with projects like...</strong></h3>
+<ul>
+<li>Conceiving, designing, building, and launching new user-facing features</li>
+<li>Working with Twilio's API, WebSockets, and WebRTC to improve our <a href="https://close.com/calling/">calling features</a></li>
+<li>Building user-facing analytics features that provide actionable insights based on sales activity data</li>
+<li>Improving real-time collaboration user experience</li>
+<li>Expanding our frontend GraphQL usage</li>
+<li>Extending our React component library</li>
+</ul>
+<h3><strong>Why work with us?</strong></h3>
+<ul>
+<li>100% Remote (we believe in trust and autonomy)</li>
+<li>2 x Annual Team Retreats (<a href="https://www.youtube.com/watch?v=gKjyXMz-q-Q&amp;feature=youtu.be">Lisbon Retreat Video</a>)</li>
+<li>Competitive salary</li>
+<li>Medical, Dental with HSA option - 99% premiums paid (<em>US residents</em>)</li>
+<li>5 Weeks PTO + 6 Government Holidays + Dec 24 - Jan 1 Company Holiday</li>
+<li>Parental Leave (10 wks primary caregiver / 4 wks secondary caregiver)</li>
+<li>401k matching at 4% (<em>US residents</em>)</li>
+<li>Paid 1 month Sabbatical after 5 years</li>
+<li><a href="https://close.io/about/">Our story and team</a></li>
+<li><a href="https://www.glassdoor.co.uk/Reviews/Close-io-Reviews-E1155591.htm">Glassdoor Reviews</a></li>
+</ul>
+<p>At Close, everyone has a voice. We encourage transparency and practicing a mature approach to the work-place. In general, we don’t have strict policies, we have guidelines. Work/Life harmony is an important part of our organization - we believe you bring your best to work when you practice self care (whatever that looks like for you).</p>
+<p>We come from 12 countries and 14 states; a collection of talented humans rich in diverse backgrounds, lifestyles and cultures. Twice a year we meet up somewhere around the world to spend time with one another. We see these retreats as an opportunity to strengthen the social fiber of our community.</p>
+<p>This team is growing in more ways than one - we’ve recently launched 8 babies (and counting!). Unanimously, our favorite and most impactful value is “Build a house you want to live in.” We strive to make decisions that are authentic for our organization. At Close, we have a high care factor for one another, in making an awesome product and championing the success of our customers.</p>
+</section>
+            </article>
+            
+  <a
+    class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
+    href="https://jobs.lever.co/close.io/10a1e32b-1a59-48dc-b8f4-e6f0dfae4e20"
+    >Apply Now</a
+  >
+
+          </details><details class="mb-4">
+            <summary class="font-bold text-blue-500">
+              Senior Software Engineer - Backend at Close
+            </summary>
+            <article class="py-4 text-gray-400">
+              <section class="markdown"><p><strong>About Us</strong></p>
+<p>At <a href="https://close.com/">Close</a>, we're building the sales communication platform of the future. With our roots as the very first sales CRM to include built-in calling, we're leading the industry toward eliminating manual processes and helping companies to close more deals (faster). Since our founding in 2013, we've grown to become a profitable, 100% globally distributed team of ~33 high-performing, happy people that are dedicated to building a product our customers love.</p>
+<p>Our backend <a href="https://stackshare.io/close-crm/close">tech stack</a> currently consists of Python Flask/Gunicorn web apps with our <a href="https://github.com/closeio/tasktiger">TaskTiger</a> scheduler handling many of the backend asynchronous task processing. Our data stores include MongoDB, Postgres, Elasticsearch, and Redis. The underlying infrastructure runs on AWS using a combination of managed services like RDS and ElasticCache and non-managed services running on EC2 instances. All of our compute runs through CI/CD pipelines that build Docker images, run automated tests and deploy to our Kubernetes clusters. Our backend primarily serves a well-documented <a href="https://developer.close.io/">public API</a> that our front-end JavaScript app consumes.</p>
+<p>We ❤️open source – using dozens of open source projects with contributions to many of them, and released some of our own like <a href="https://github.com/closeio/ciso8601">ciso8601</a><strong>,</strong> <a href="https://github.com/closeio/limitlion">LimitLion</a>, <a href="https://github.com/closeio/socketshark">SocketShark</a>, <a href="https://github.com/closeio/tasktiger">TaskTiger</a>, and more at <a href="https://github.com/closeio">https://github.com/closeio</a></p>
+<p><strong>About You</strong></p>
+<p>We're looking for an experienced full-time Software Engineer to join our engineering team. Someone who has a solid understanding of web technologies and wants to help design, implement, launch, and scale major systems and user-facing features.</p>
+<p>You should have senior level experience (~5 years) building modern back-end systems, with at least 3 years of that experience using Python.</p>
+<p>You also have around five years experience using MongoDB, PostgreSQL, Elasticsearch, or similar data stores. You have significant experience designing, scaling, debugging, and optimizing systems to make them fast and reliable. You have experience participating in code reviews and providing overall code quality suggestions to help maintain the structure and quality of the codebase.</p>
+<p>You’re comfortable working in a fast-paced environment with a small and talented team where you're supported in your efforts to grow professionally. You are able to manage your time well, communicate effectively and collaborate in a fully distributed team.
+You are located in an American or European time zone.</p>
+<h3><strong>Bonus point if you have...</strong></h3>
+<ul>
+<li>Contributed open source code related to our tech stack</li>
+<li>Led small project teams building and launching features</li>
+<li>Built B2B SaaS products</li>
+<li>Experience with sales or sales tools</li>
+</ul>
+<h3><strong>Come help us with projects like...</strong></h3>
+<ul>
+<li>Conceiving, designing, building, and launching new user-facing features</li>
+<li>Improving the performance and scalability our <a href="https://developer.close.com/">API</a>. Help expand our GraphQL implementation.</li>
+<li>Improving how we <a href="https://close.com/emailing/">sync</a> millions of sales emails each month</li>
+<li>Working with Twilio's API, WebSockets, and WebRTC to improve our <a href="https://close.com/calling/">calling features</a></li>
+<li>Building user-facing analytics features that provide actionable insights based on sales activity data</li>
+<li>Improving our Elasticsearch-backed powerful <a href="https://close.com/search/">search features</a></li>
+<li>Improving our internal messaging infrastructure using streaming technologies like Kafka and Redis</li>
+<li>Building new and enhancing existing integrations with other SaaS platforms like Google’s G Suite, Zapier, and Web Conferencing providers</li>
+</ul>
+<h3><strong>Why work with us?</strong></h3>
+<ul>
+<li>100% Remote (we believe in trust and autonomy)</li>
+<li>2 x Annual Team Retreats ✈️ (<a href="https://www.youtube.com/watch?v=gKjyXMz-q-Q&amp;feature=youtu.be">Lisbon Retreat Video</a>)</li>
+<li>Competitive salary</li>
+<li>Medical, Dental with HSA option - 99% premiums paid (<em>US residents</em>)</li>
+<li>5 Weeks PTO + 6 Government Holidays + Dec 24 - Jan 1 Company Holiday</li>
+<li>Parental Leave (10 wks primary caregiver / 4 wks secondary caregiver)</li>
+<li>401k matching at 4% (<em>US residents</em>)</li>
+<li>Paid 1 month Sabbatical after 5 years</li>
+<li><a href="https://close.io/about/">Our story and team</a> 🚀</li>
+<li><a href="https://www.glassdoor.co.uk/Reviews/Close-io-Reviews-E1155591.htm">Glassdoor Reviews</a></li>
+</ul>
+<p>At Close, everyone has a voice. We encourage transparency and practicing a mature approach to the work-place. In general, we don’t have strict policies, we have guidelines. Work/Life harmony is an important part of our organization - we believe you bring your best to work when you practice self care (whatever that looks like for you).</p>
+<p>We come from 12 countries and 14 states; a collection of talented humans rich in diverse backgrounds, lifestyles and cultures. Twice a year we meet up somewhere around the world to spend time with one another. We see these retreats as an opportunity to strengthen the social fiber of our community.</p>
+<p>This team is growing in more ways than one - we’ve recently launched 8 babies (and counting!). Unanimously, our favorite and most impactful value is “Build a house you want to live in.” We strive to make decisions that are authentic for our organization. At Close, we have a high care factor for one another, in making an awesome product and championing the success of our customers.</p>
+</section>
+            </article>
+            
+  <a
+    class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
+    href="https://jobs.lever.co/close.io/592193bf-8a9c-43cf-86a1-faeb75107939"
+    >Apply Now</a
+  >
+
+          </details><details class="mb-4">
+            <summary class="font-bold text-blue-500">
+              Full Stack Javascript Developer at AddJust
+            </summary>
+            <article class="py-4 text-gray-400">
+              <section class="markdown"><h2><strong>DESCRIPTION</strong></h2>
+<p>We are looking to add a full stack JavaScript developer to our engineering team.</p>
+<p>You would be part of a small team that is responsible for building out our latest product, which is currently in the design phase.</p>
+<p>Some of the things we value:</p>
+<ul>
+<li>Clean code - We believe the key to moving fast is to write simple, maintainable code, and that the time spent refactoring to a simpler solution pays for itself many times over.</li>
+<li>Autonomy - We are a small team with minimal process, so we look for people who can take ownership of features from inception through to production deployment.</li>
+<li>Code reviews - We believe code review is important for both maintaining the standard of our code and as a learning tool.</li>
+<li>Working at a sustainable pace</li>
+</ul>
+<h2><strong>REQUIREMENTS</strong></h2>
+<p>These are the technologies we use:</p>
+<ul>
+<li>TypeScript - For all frontend and backend code.</li>
+<li>React - For our web applications (New components are written using Hooks).</li>
+<li>Apollo Client - To connect our frontend react components to our graphql backend.</li>
+<li>Postgraphile - To generate a secure graphql schema from our postgresql database.</li>
+<li>Postgresql - For our relational database</li>
+<li>Firestore - For our real time messaging</li>
+<li>Jest - For unit tests on the frontend and backend.</li>
+<li>Cypress.io - For integration testing.</li>
+<li>Flutter - Our mobile application is written in Flutter</li>
+<li>CircleCI - For our CI/CD server.</li>
+<li>AWS - Hosting.</li>
+</ul>
+<p>Ideally we are looking for a full stack developer that has experience with the technologies listed above.</p>
+<p>However, even if you don’t match the skill set exactly, if you have experience shipping web software for a number of years, but don't have experience in all the technologies listed, we're more than happy to teach you on the job.</p>
+<h2><strong>BENEFITS</strong></h2>
+<p>This is a remote position. We are looking for a 40 hour per week commitment, but if you would prefer to do a 32 or 24 hour week that could be an option for the right candidate. There would need to be at least 4 hours overlap with a 9:00am - 5:00pm window in GMT.</p>
+<p>It would also be an advantage if you can meet up somewhere close to Clare (Limerick, Galway etc) on a semi-regular basis (twice a month).</p>
+<p>No agencies please.</p>
+</section>
+            </article>
+            
+  <a
+    class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
+    href="https://addjust.workable.com/j/BE2F7128C1?viewed=true"
+    >Apply Now</a
+  >
+
+          </details><details class="mb-4">
+            <summary class="font-bold text-blue-500">
+              Deep Learning Engineer at Stockwell
+            </summary>
+            <article class="py-4 text-gray-400">
+              <section class="markdown"><p>At Stockwell, we are using machine learning and computer vision to build the retail platform of the future. In our world, brick and mortar stores look much different - we place stores right where our customers live, work and play so we can curate the products in our stores with the help of our customers. This is all possible because we design, build and operate automated stores that put the customer first with a seamless, frictionless checkout experience.</p>
+<h3><strong>You'll make an impact on one or more of these areas:</strong></h3>
+<ul>
+<li><strong>Design end-to-end pipelines for new vision models</strong>: We have a unique asset in that our fleet of stores generates hundreds of transactions a day, each of which is a similarly structured problem with rich collected context. You will build pipelines that operate on a per transaction basis that help determine the state of inventory in each of our stores after transaction and restocking events. This involves 1) adapting and inventing novel model architecture, 2) designing training data for those model 3) working with our internal ops teams or vendors to generate training data, and 4) deploying inference services against our incoming transaction queue.</li>
+<li><strong>Retrain metrics and item introduction pipeline</strong>: Although all of our stores share a similar form factor, they operate in different contexts, with different lighting, and with different items. Help us learn and establish pipeline best practices around training data requirements on a per store and per item basis.</li>
+<li><strong>Journal Club</strong>: You will help drive our internal journal club, where we review the latest and greatest papers, demos, and novel methods in your field of expertise.</li>
+</ul>
+<h3><strong>Qualifications:</strong></h3>
+<ul>
+<li>Masters or PhD in machine learning or a machine learning related field</li>
+<li>1+ years of experience building nets in Tensorflow, Caffe, Torch, Keras, Theano (we use Tensorflow)</li>
+<li>Experience with GPU computing including multigpu training and CUDA management.</li>
+<li>Strong written and verbal communication skills</li>
+<li>Incredibly fast learner, hungry for growth and/or ready to lead.</li>
+</ul>
+<h3><strong>Preferred/Bonus Qualifications:</strong></h3>
+<ul>
+<li>1+ years of full-stack software development experience.</li>
+<li>3+ years experience with one or more general purpose programming languages including but not limited to: Java, C/C++, C#, Objective C, Python, JavaScript, or Go</li>
+<li>Experience with classical computer vision and machine learning techniques.</li>
+<li>Experience with the Google Cloud Platform</li>
+<li>An interest in Advertising/Retail/CPG</li>
+</ul>
+</section>
+            </article>
+            
+  <a
+    class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
+    href="https://jobs.lever.co/stockwell/41a3eac8-59e0-44de-b788-8aab168d99b6"
+    >Apply Now</a
+  >
+
+          </details><details class="mb-4">
+            <summary class="font-bold text-blue-500">
+              Full Stack Engineer at Stockwell
+            </summary>
+            <article class="py-4 text-gray-400">
+              <section class="markdown"><p>At Stockwell, we are using machine learning and computer vision to build the retail platform of the future. In our world, brick and mortar stores look much different - we place stores right where our customers live, work and play so we can curate the products in our stores with the help of our customers. This is all possible because we design, build and operate automated stores that put the customer first with a seamless, frictionless checkout experience.
+We’re looking for a full-stack engineer to round out our skillsets and help lead our growing engineering team. Our ideal candidate is someone with meaningful SWE experience who wants to expand their responsibilities and own projects across our tech stack, and who can design and build end-to-end solutions from scratch.</p>
+<h3><strong>You'll make an impact on 1 or more of these areas:</strong></h3>
+<ul>
+<li><strong>React Native App</strong>: Today our customers use our app to gain access to our stores, to view receipts, and to change payment information. This just scratches the surface of what our app experience needs to be. Own and help define the product and development roadmap for managing a slew of new features.</li>
+<li><strong>Internal Logistics Tools</strong>: Our goal is to democratize physical distribution, so that mom and pop store owners, boutique brands, and large retailers can reach customers in ways they’ve never been able to before. Own and help define the product and development roadmap to manage and optimize our complex supply chain.</li>
+<li><strong>Retail Experimentation</strong>: To bring the relevant slice of retail to customers, we need to know what products they want. Help build and define a retail experimentation framework that brings the efficacy and data-orientation of e-commerce to the real world, while tying into the financial realities of running a physical retail business.</li>
+</ul>
+<h3><strong>Qualifications:</strong></h3>
+<ul>
+<li>3+ years of full-stack software development experience. Experience with React/Redux or similar JS frameworks.</li>
+<li>2+ years of database experience with mySQL, sql-lite or Postgres</li>
+<li>A knack for architecture: You strive to design and implement elegant and scalable software systems.</li>
+<li>BS or MS degree in Computer Science (or a related field)</li>
+<li>Strong written and verbal communication skills, as you will need to interface with functional leads in our operations, retail, and sales organizations.</li>
+<li>Incredibly fast learner, hungry for growth and/or ready to lead.</li>
+</ul>
+<h3><strong>Preferred/Bonus Qualifications:</strong></h3>
+<ul>
+<li>5+ years of experience with one or more general purpose programming languages. including but not limited to: Java, C/C++, C#, Objective C, Python, JavaScript, or Go.</li>
+<li>Experience with Django and the Django REST Framework.</li>
+<li>Experience with GraphQL.</li>
+<li>Experience with the Google Cloud Platform.</li>
+<li>An interest in Advertising/Retail/CPG.</li>
+<li>An interest in AI and Machine Learning.</li>
+</ul>
+</section>
+            </article>
+            
+  <a
+    class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
+    href="https://jobs.lever.co/stockwell/94717180-5d5c-4677-8b6f-6c5fa48cd653"
+    >Apply Now</a
+  >
+
+          </details><details class="mb-4">
+            <summary class="font-bold text-blue-500">
+              React Developer at MojoTech
+            </summary>
+            <article class="py-4 text-gray-400">
+              <section class="markdown"><p>Whether Back-End, Front-End, Full-Stack, Dev-Ops, or Mobile, a big part of what makes being a member of the engineering team at MojoTech so rewarding is the challenge. The job starts hard, and only gets harder. If you believe in constant improvement, and want to join a team that helps one another achieve that goal, please continue reading.</p>
+<p>As a React Developer at MojoTech you will utilize your experience with React, Redux, and the larger React ecosystem and best practices to deliver high-quality, reliable, and maintainable code on multiple projects per year. You will work closely with product managers, designers, and clients, to ensure the focus is on quickly delivering valuable working software in a pragmatic and agile manner.</p>
+<h2>Skills &amp; Requirements</h2>
+<p>The people we’re looking for should be able to check off all of this:</p>
+<ul>
+<li>3+ years experience building front end or mobile applications, most recently with React.js</li>
+<li>Familiarity with Redux, Jest, and many of the other tools and libraries used to build front end applications.</li>
+<li>BA/BS in Computer Science or a related field, or equivalent experience</li>
+<li>Understanding of version control (Git) and code documentation</li>
+<li>A strong desire to improve yourself and improve those around you</li>
+</ul>
+<p>And they should also be able to check off some of this:</p>
+<ul>
+<li>Expertise with Javascript or Typescript and its nuances</li>
+<li>Understanding of browsers, the DOM, and how to build rich user interfaces</li>
+<li>Familiarity integrating with REST and GraphQL APIs.</li>
+<li>Awareness of how to build GraphQL APIs</li>
+<li>Proficiency with React Native mobile development; Android or iOS</li>
+<li>Exposure to leadership or mentorship roles, particularly on a development team</li>
+<li>Experience working in an agency, as a software consultant, or tailoring solutions to match client requirements and capability</li>
+<li>Ability to formulate and communicate opinions on what makes software good or bad to both technical and business client stakeholders</li>
+<li>Contributed to open source projects or presented at a conference</li>
+<li>Built and deployed 12-factor apps as part of a collaborative project team</li>
+</ul>
+<p><em>Relocation assistance may be offered to exceptional candidates.</em></p>
+<h2>Working at MojoTech</h2>
+<p>MojoTech is a growing team of ambitious, authentic, smart, pragmatic people. Our mission is to practice engineering excellence, to foster an enjoyable environment that allows everyone to reach their potential, to work in a sustainable way, and to help our clients succeed.</p>
+<p>We design and engineer distributed systems and mobile applications for big, and soon-to-big companies – helping enterprises move faster, and startups build smarter.</p>
+<p>Learn more about our <a href="https://www.mojotech.com/jobs/">culture and comprehensive benefits here.</a></p>
+<p>Learn more about our engineering <a href="https://www.mojotech.com/engineering">approach and philosophy here.</a></p>
+<p><em>MojoTech is an Equal Employment Opportunity employer that will consider all qualified applicants, regardless of race, color, religion, gender, sexual orientation, marital status, gender identity or expression, national origin, genetics, age, disability status, protected veteran status, or any other characteristic protected by applicable law.</em></p>
+</section>
+            </article>
+            
+  <a
+    class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
+    href="https://www.mojotech.com/jobs"
+    >Apply Now</a
+  >
+
+          </details>
+    </div>
+    
+  <footer class="p-4">
+    <div class="flex flex-col lg:flex-row items-center">
+      <div class="w-full lg:w-auto lg:mr-auto text-center lg:text-left">
+        © 2021 GraphQL Editor
+      </div>
+    </div>
+  </footer>
+
+  </div>
+
+  </body>
+</html>

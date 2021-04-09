@@ -11,9 +11,9 @@ jobs:
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v1
         with:
-          node-version: "12.x"
+          node-version: "14.x"
           registry-url: "https://registry.npmjs.org"
-      - run: npm install -g graphql-ssg
+      - run: npm install -g graphql-ssg@latest
       - run: graphql-ssg --build
       - uses: JamesIves/github-pages-deploy-action@4.1.1
         with:

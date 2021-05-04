@@ -1,5 +1,7 @@
 {
   "url": "https://api.graphql.jobs/",
   "out": "./out",
-  "in": "./pages"
+  "in": "./pages",
+  "port": 8080,
+  "websocketPort": 1411
 }

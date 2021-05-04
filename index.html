@@ -6291,7 +6291,7 @@ const apiSubscription = (options) => (
   };
 
   
-const Thunder = (fn) => ({
+const Thunder = (fn, subscriptionFn) => ({
   query: fullChainConstructor(fn,'query', 'Query'),
 mutation: fullChainConstructor(fn,'mutation', 'Mutation')
 });
@@ -6316,6 +6316,7 @@ mutation: ZeusSelect()
 
 const Gql = Chain('https://api.graphql.jobs/')
 
+  import {Remarkable} from 'https://cdn.skypack.dev/remarkable';
   var html = typeof html === "undefined" ? (strings, ...expr) => {
     let str = '';
     strings.forEach((string, i) => {
@@ -6330,19 +6331,131 @@ const Gql = Chain('https://api.graphql.jobs/')
     });
     return str;
   } : css
+  const remarkableRenderer = new Remarkable()
+  var md = typeof md === "undefined" ? (strings, ...expr) => {
+    let str = '';
+    strings.forEach((string, i) => {
+        str += string + (expr[i] || '');
+    });
+    return remarkableRenderer.render(str);
+  } : md
   
+const configCode = `{
+  "url": "https://api.graphql.jobs/",
+  "out": "./out",
+  "in": "./pages",
+  "port": 8080,
+  "websocketPort": 1411
+}`;
 
-const FaqTile = ({ question, answer, open }) => {
-  return html`
-    <details class="p-4 mb-2 border-b">
-      <summary class="font-semibold">${question}</summary>
-      <p class="mt-1">${answer}</p>
-    </details>
-  `;
-}
-const code = "const data = await Gql.query({\n  jobs: [\n    {},\n    { company: { name: true }, description: true, title: true, applyUrl: true },\n  ],\n});\n\nconst PrimaryButton = ({ text, href }) => html`\n  <a\n    class=\"inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow\"\n    href=\"${href}\"\n    >${text}\n  </a>\n`;\n\nreturn html`\n  <div class=\"p-4\">\n    ${data.jobs\n      .slice(0, 10)\n      .map(\n        (j) => html`<details class=\"mb-4\">\n          <summary class=\"font-bold text-blue-500\">\n            ${j.company.name + \"-\" + j.title}\n          </summary>\n          <article class=\"py-4 text-gray-400\">\n            <section class=\"markdown\">${md`${j.description}`}</section>\n          </article>\n          ${PrimaryButton({ text: \"Apply Now\", href: j.applyUrl })}\n        </details>`\n      )\n      .join(\"\")}\n  </div>\n`;"
-const configCode = "{\n  \"url\": \"https://api.graphql.jobs/\",\n  \"out\": \"./out\",\n  \"in\": \"./pages\"\n}"
-const afterRender = async () => {
+const code = `const PrimaryButton = ({ text, href }) => html\`
+  <a
+    class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
+    href="\${href}"
+    >\${text}
+  </a>
+\`;
+
+
+export default async () => {
+  const data = await Gql.query({
+    jobs: [
+      {},
+      { company: { name: true }, description: true, title: true, applyUrl: true },
+    ],
+  });
+  return html\`
+    <div class="p-4">
+      \${data.jobs
+        .slice(0, 10)
+        .map(
+          (j) => html\`<details class="mb-4">
+            <summary class="font-bold text-blue-500">
+              \${j.company.name + "-" + j.title}
+            </summary>
+            <article class="py-4 text-gray-400">
+              <section class="markdown">\${md\`\${j.description}\`}</section>
+            </article>
+            \${PrimaryButton({ text: "Apply Now", href: j.applyUrl })}
+          </details>\`
+        ).join("")}
+    </div>
+  \`
+}`;
+
+const PrimaryButton = ({ text, href }) => html`
+  <a
+    class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
+    href="${href}"
+    >${text}</a
+  >
+`;
+const SecondaryButton = ({ text, href }) => html`
+  <a class="text-indigo-600 hover:underline" href="${href}">${text}</a>
+`;
+
+const Hero = ({
+  tagline,
+  title,
+  description,
+  left: { href, text },
+  right: { href: rHref, text: rText },
+}) => {
+  return html`<section class="py-12 px-4 w-full">
+    <div class="w-full mx-auto">
+      <span class="text-2xl font-semibold py-24">${tagline}</span>
+      <h2 class="text-5xl mt-2 mb-6 leading-tight font-semibold font-heading">
+        ${title}
+      </h2>
+      <p class="mb-8 text-gray-400 text-xl leading-relaxed">${description}</p>
+      <div>
+        ${PrimaryButton({ text, href })}
+        ${SecondaryButton({ text: rText, href: rHref })}
+      </div>
+    </div>
+  </section>`;
+};
+
+const Feature = ({ title, text }) => html`
+  <div class="md:w-1/3 py-4 px-8 mb-4 md:mb-0">
+    <h3 class="text-2xl font-semibold font-heading">${title}</h3>
+    <p class="my-4 text-gray-400 leading-relaxed">${text}</p>
+  </div>
+`;
+
+const FeatureList = () => html`
+  <section class="p-4">
+    <div class="flex flex-wrap -mx-8">
+      ${Feature({
+        title: "Great Speed",
+        text:
+          "Create websites and deploy them instantly. Experience the flow you've never experienced before",
+      })}
+      ${Feature({
+        title: "Instant availability",
+        text:
+          "GraphQL SSG websites can be deployed instantly using GraphQL Editor JAMStack.",
+      })}
+      ${Feature({
+        title: "Nothing to learn",
+        text:
+          "It is easy to start with basic HTML and CSS knowledge. GraphQL client is autocompleted thanks to GraphQL Zeus.",
+      })}
+    </div>
+  </section>
+`;
+
+const Footer = () => html`
+  <footer class="p-4">
+    <div class="flex flex-col lg:flex-row items-center">
+      <div class="w-full lg:w-auto lg:mr-auto text-center lg:text-left">
+        © 2021 GraphQL Editor
+      </div>
+    </div>
+  </footer>
+`;
+
+const OnLoad = async () => {
   const hljs = await import("https://cdn.skypack.dev/highlight.js");
   const cbl = document.getElementById("code");
   const configBlock = document.getElementById("config");
@@ -6353,16 +6466,85 @@ const afterRender = async () => {
     hljs.default.highlightElement(configBlock, { language: "json" });
   }, 500);
 };
-afterRender();
+
+window.onload = () => {
+  OnLoad();
+};
+
+export default async () => {
+  const data = await Gql.query({
+    jobs: [
+      {},
+      {
+        company: { name: true },
+        description: true,
+        title: true,
+        applyUrl: true,
+      },
+    ],
+  });
+  return html`
+    <style>
+      @import "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/default.min.css";
+    </style>
+    <div class="container mx-auto">
+      ${Hero({
+        tagline: "GraphQL >_ SSG",
+        title: "Create GraphQL data driven static websites in no time.",
+        description:
+          "What you get is fully autocomplete driven GraphQL Client injected in Static Website Generator. Create landing pages and leverage the power of GraphQL. Connect to powerful headless CMS of choice, create your own backend or play with fake data.",
+        left: {
+          text: "GitHub",
+          href: "https://github.com/graphql-editor/graphql-ssg",
+        },
+        right: {
+          text: "Test Live",
+          href:
+            "https://app.graphqleditor.com/explore-projects/feature-mole?visibleMenu=mock",
+        },
+      })}
+      ${FeatureList()}
+      <h3 class="text-lg font-semibold text-blue-600 p-4 mt-10">
+        Example: Display companies looking for people to work in GraphQL
+        industry
+      </h3>
+      <label class="px-4">graphql-ssg.json</label>
+      <pre class="p-4"><code id="config"></code></pre>
+      <label class="px-4">index.js</label>
+      <pre class="p-4"><code id="code"></code></pre>
+      <h3 class="text-lg font-semibold text-blue-600 p-4 mt-10">
+        Example: Result
+      </h3>
+      <div class="p-4">
+        ${data.jobs
+          .slice(0, 10)
+          .map(
+            (j) => html`<details class="mb-4">
+              <summary class="font-bold text-blue-500">
+                ${`${j.title} at ${j.company.name}`}
+              </summary>
+              <article class="py-4 text-gray-400">
+                <section class="markdown">${md`${j.description}`}</section>
+              </article>
+              ${PrimaryButton({ text: "Apply Now", href: j.applyUrl })}
+            </details>`
+          )
+          .join("")}
+      </div>
+      ${Footer()}
+    </div>
+  `;
+};
+
     </script>
   </head>
   <body>
     
-  <style>
-    @import "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/default.min.css";
-  </style>
-  <div class="container mx-auto">
-    <section class="py-12 px-4 w-full">
+    <style>
+      @import "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/default.min.css";
+    </style>
+    <div class="container mx-auto">
+      <section class="py-12 px-4 w-full">
     <div class="w-full mx-auto">
       <span class="text-2xl font-semibold py-24">GraphQL >_ SSG</span>
       <h2 class="text-5xl mt-2 mb-6 leading-tight font-semibold font-heading">
@@ -6383,7 +6565,7 @@ afterRender();
       </div>
     </div>
   </section>
-    
+      
   <section class="p-4">
     <div class="flex flex-wrap -mx-8">
       
@@ -6407,23 +6589,24 @@ afterRender();
     </div>
   </section>
 
-    <h3 class="text-lg font-semibold text-blue-600 p-4 mt-10">
-      Example: Display companies looking for people to work in GraphQL industry
-    </h3>
-    <label class="px-4">graphql-ssg.json</label>
-    <pre class="p-4"><code id="config"></code></pre>
-    <label class="px-4">index.zeus.js</label>
-    <pre class="p-4"><code id="code"></code></pre>
-    <h3 class="text-lg font-semibold text-blue-600 p-4 mt-10">
-      Example: Result
-    </h3>
-    <div class="p-4">
-      <details class="mb-4">
-            <summary class="font-bold text-blue-500">
-              Senior Fullstack Engineer - Platform at Segment
-            </summary>
-            <article class="py-4 text-gray-400">
-              <section class="markdown"><h1>**Overview **</h1>
+      <h3 class="text-lg font-semibold text-blue-600 p-4 mt-10">
+        Example: Display companies looking for people to work in GraphQL
+        industry
+      </h3>
+      <label class="px-4">graphql-ssg.json</label>
+      <pre class="p-4"><code id="config"></code></pre>
+      <label class="px-4">index.js</label>
+      <pre class="p-4"><code id="code"></code></pre>
+      <h3 class="text-lg font-semibold text-blue-600 p-4 mt-10">
+        Example: Result
+      </h3>
+      <div class="p-4">
+        <details class="mb-4">
+              <summary class="font-bold text-blue-500">
+                Senior Fullstack Engineer - Platform at Segment
+              </summary>
+              <article class="py-4 text-gray-400">
+                <section class="markdown"><h1>**Overview **</h1>
 <p>At Segment, we believe companies should be able to send their customer data wherever they want, whenever they want, with no fuss. We make this easy with a single pipeline that collects, stores, filters, transforms, and sends data to hundreds of business tools with the flip of a switch. Historically, we’ve built integrations with more than 250 different customer data tools ourselves(think Mixpanel, Google Analytics, Stripe).This March, we opened up our <a href="https://segment.com/partners/developer-center/">++<strong>Developer Center</strong>++</a>. For the first time, new companies could build integrations upon Segment data, using our self-service workflow. In that time, we’ve onboarded <strong>60 separate companies</strong>, each of whom built endpoints to work with our spec. We're now looking for a Senior Fullstack Engineer to help us expand our platform…we want to offer every kind of developer (partners, customers, and indie devs) the means to use Segment data.</p>
 <h2><strong>Project we are working on:</strong></h2>
 <p>We want to give our users and partners:</p>
@@ -6462,20 +6645,20 @@ afterRender();
 </ul>
 <p>Segment is an equal opportunity employer. We believe that everyone should receive equal consideration and treatment in all terms and conditions of employment regardless of sex, gender (including pregnancy, childbirth, breastfeeding or related medical conditions), sexual orientation, gender identity, gender expression, race, color, religion, creed, national origin, ancestry, age (over 40), physical disability, mental disability, medical condition, genetic information, marital status, domestic partner status, military or veteran status, height, weight, AIDS/HIV status, and any other protected category under federal, state or local law. Pursuant to the San Francisco Fair Chance Ordinance, we will consider for employment qualified applicants with arrest and conviction records.</p>
 </section>
-            </article>
-            
+              </article>
+              
   <a
     class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
     href="https://grnh.se/2d8f45d71"
     >Apply Now</a
   >
 
-          </details><details class="mb-4">
-            <summary class="font-bold text-blue-500">
-              Full Stack JavaScript Developer at Unrealists
-            </summary>
-            <article class="py-4 text-gray-400">
-              <section class="markdown"><p>We are looking for a strong (Midlevel to Senior) Javascript Developer with to join our team. You will be working on extending and maintaining frontend code and serverless backend.</p>
+            </details><details class="mb-4">
+              <summary class="font-bold text-blue-500">
+                Full Stack JavaScript Developer at Unrealists
+              </summary>
+              <article class="py-4 text-gray-400">
+                <section class="markdown"><p>We are looking for a strong (Midlevel to Senior) Javascript Developer with to join our team. You will be working on extending and maintaining frontend code and serverless backend.</p>
 <p>Full-time or part-time. In Berlin or remote.</p>
 <p>​</p>
 <p><strong>Job Description</strong></p>
@@ -6508,20 +6691,20 @@ afterRender();
 <li>Experience with API integrations like (JWT, Social Media Services)</li>
 </ul>
 </section>
-            </article>
-            
+              </article>
+              
   <a
     class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
     href="https://docs.google.com/forms/d/1zlEfXsBMwxmQSHzAsYV-ZNM896yMoV4NHRwPg-GhsEE/"
     >Apply Now</a
   >
 
-          </details><details class="mb-4">
-            <summary class="font-bold text-blue-500">
-              Senior Software Engineer, API Development at DeepCrawl
-            </summary>
-            <article class="py-4 text-gray-400">
-              <section class="markdown"><p><strong>Overview of DeepCrawl</strong></p>
+            </details><details class="mb-4">
+              <summary class="font-bold text-blue-500">
+                Senior Software Engineer, API Development at DeepCrawl
+              </summary>
+              <article class="py-4 text-gray-400">
+                <section class="markdown"><p><strong>Overview of DeepCrawl</strong></p>
 <p>DeepCrawl is the world’s most comprehensive website crawler, providing actionable data for flawless website architecture. By identifying and monitoring key issues that could affect SEO performance, we empower our clients to optimize their websites for users and search engines alike. This enables our clients to drive further traffic and revenue from their organic channel.</p>
 <p>Winner of Best SEO Software at the European Search Awards, we're proud to be trusted by some of the world's top SEOs in over 50 countries.</p>
 <p>Our ultimate vision is to become the tool of choice for marketers across the world - letting them crawl and analyse all of their websites to identify key insights. To help us support that vision we’re looking for bright, ambitious, and passionate talent to join us across our London, New York City, and Krakow offices.</p>
@@ -6579,20 +6762,20 @@ afterRender();
 </ul>
 <p>If you’re looking for an exciting opportunity to work with a fast-growing and innovative tech company, then please get in touch!</p>
 </section>
-            </article>
-            
+              </article>
+              
   <a
     class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
     href="mailto:karolis.mazukna@deepcrawl.com"
     >Apply Now</a
   >
 
-          </details><details class="mb-4">
-            <summary class="font-bold text-blue-500">
-              Experienced Backend Engineer - Go at Theorem
-            </summary>
-            <article class="py-4 text-gray-400">
-              <section class="markdown"><p>Do you enjoy collaborating in a consultative environment and guiding people using best practices to achieve great results? Do you want to influence and contribute to the growth of a high performing, quality focused team? If so, Theorem wants to know more about you!</p>
+            </details><details class="mb-4">
+              <summary class="font-bold text-blue-500">
+                Experienced Backend Engineer - Go at Theorem
+              </summary>
+              <article class="py-4 text-gray-400">
+                <section class="markdown"><p>Do you enjoy collaborating in a consultative environment and guiding people using best practices to achieve great results? Do you want to influence and contribute to the growth of a high performing, quality focused team? If so, Theorem wants to know more about you!</p>
 <p><a href="http://theorem.co/">Theorem</a> is a software consultancy that believes in simplicity in software design. We deliver solutions for startups and enterprises - You can see our <a href="https://theorem.co/portfolio">portfolio</a> to learn more about the results we’ve delivered for our clients.</p>
 <p>This is a remote role. We are a remote first company with offices in Los Angeles and New York. We have team members all around the world.</p>
 <p>Please note this role may require occasional travel to client sites within the USA. Candidates located within UTC - 3 to UTC - 8 will be given priority for team time zone alignment.</p>
@@ -6639,20 +6822,20 @@ afterRender();
 <p><em>Theorem is an equal opportunity employer.</em></p>
 <p><em>No statements by Theorem are intended to create an offer of employment unless made in writing signed by an officer of the company and no offer shall become effective unless countersigned by the prospective employee.</em></p>
 </section>
-            </article>
-            
+              </article>
+              
   <a
     class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
     href="https://theorem.applytojob.com/apply/pfoWyqGnlh"
     >Apply Now</a
   >
 
-          </details><details class="mb-4">
-            <summary class="font-bold text-blue-500">
-              Senior Software Engineer - Frontend at Close
-            </summary>
-            <article class="py-4 text-gray-400">
-              <section class="markdown"><p><strong>About Us</strong></p>
+            </details><details class="mb-4">
+              <summary class="font-bold text-blue-500">
+                Senior Software Engineer - Frontend at Close
+              </summary>
+              <article class="py-4 text-gray-400">
+                <section class="markdown"><p><strong>About Us</strong></p>
 <p>At <a href="https://close.com/">Close</a>, we're building the sales communication platform of the future. With our roots as the very first sales CRM to include built-in calling, we're leading the industry toward eliminating manual processes and helping companies to close more deals (faster). Since our founding in 2013, we've grown to become a profitable, 100% globally distributed team of ~33 high-performing, happy people that are dedicated to building a product our customers love.</p>
 <p>Our app’s frontend is a single-page JavaScript web app mostly written in React (originally built with Backbone.js). We bundle with Webpack and target only modern browsers. We test with Enzyme and Mocha run via Puppeteer. Our UI updates in near real-time and is written in LESS/CSS (with flexbox and grid layout) using BEM methodology and takes advantage of fun technologies like Websockets and WebRTC.</p>
 <p>We care about performance (e.g. route-based code splitting), maintainability, and testability of our frontend code. We sweat the UI/UX details and work collaboratively with the Product team throughout the design process. This means diving into lo-fi Freehand wireframes, and communicating continuously when those ideas are brought to life using Sketch/Abstract and code.</p>
@@ -6701,20 +6884,20 @@ You are located in an American or European time zone.</p>
 <p>We come from 12 countries and 14 states; a collection of talented humans rich in diverse backgrounds, lifestyles and cultures. Twice a year we meet up somewhere around the world to spend time with one another. We see these retreats as an opportunity to strengthen the social fiber of our community.</p>
 <p>This team is growing in more ways than one - we’ve recently launched 8 babies (and counting!). Unanimously, our favorite and most impactful value is “Build a house you want to live in.” We strive to make decisions that are authentic for our organization. At Close, we have a high care factor for one another, in making an awesome product and championing the success of our customers.</p>
 </section>
-            </article>
-            
+              </article>
+              
   <a
     class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
     href="https://jobs.lever.co/close.io/10a1e32b-1a59-48dc-b8f4-e6f0dfae4e20"
     >Apply Now</a
   >
 
-          </details><details class="mb-4">
-            <summary class="font-bold text-blue-500">
-              Senior Software Engineer - Backend at Close
-            </summary>
-            <article class="py-4 text-gray-400">
-              <section class="markdown"><p><strong>About Us</strong></p>
+            </details><details class="mb-4">
+              <summary class="font-bold text-blue-500">
+                Senior Software Engineer - Backend at Close
+              </summary>
+              <article class="py-4 text-gray-400">
+                <section class="markdown"><p><strong>About Us</strong></p>
 <p>At <a href="https://close.com/">Close</a>, we're building the sales communication platform of the future. With our roots as the very first sales CRM to include built-in calling, we're leading the industry toward eliminating manual processes and helping companies to close more deals (faster). Since our founding in 2013, we've grown to become a profitable, 100% globally distributed team of ~33 high-performing, happy people that are dedicated to building a product our customers love.</p>
 <p>Our backend <a href="https://stackshare.io/close-crm/close">tech stack</a> currently consists of Python Flask/Gunicorn web apps with our <a href="https://github.com/closeio/tasktiger">TaskTiger</a> scheduler handling many of the backend asynchronous task processing. Our data stores include MongoDB, Postgres, Elasticsearch, and Redis. The underlying infrastructure runs on AWS using a combination of managed services like RDS and ElasticCache and non-managed services running on EC2 instances. All of our compute runs through CI/CD pipelines that build Docker images, run automated tests and deploy to our Kubernetes clusters. Our backend primarily serves a well-documented <a href="https://developer.close.io/">public API</a> that our front-end JavaScript app consumes.</p>
 <p>We ❤️open source – using dozens of open source projects with contributions to many of them, and released some of our own like <a href="https://github.com/closeio/ciso8601">ciso8601</a><strong>,</strong> <a href="https://github.com/closeio/limitlion">LimitLion</a>, <a href="https://github.com/closeio/socketshark">SocketShark</a>, <a href="https://github.com/closeio/tasktiger">TaskTiger</a>, and more at <a href="https://github.com/closeio">https://github.com/closeio</a></p>
@@ -6759,20 +6942,20 @@ You are located in an American or European time zone.</p>
 <p>We come from 12 countries and 14 states; a collection of talented humans rich in diverse backgrounds, lifestyles and cultures. Twice a year we meet up somewhere around the world to spend time with one another. We see these retreats as an opportunity to strengthen the social fiber of our community.</p>
 <p>This team is growing in more ways than one - we’ve recently launched 8 babies (and counting!). Unanimously, our favorite and most impactful value is “Build a house you want to live in.” We strive to make decisions that are authentic for our organization. At Close, we have a high care factor for one another, in making an awesome product and championing the success of our customers.</p>
 </section>
-            </article>
-            
+              </article>
+              
   <a
     class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
     href="https://jobs.lever.co/close.io/592193bf-8a9c-43cf-86a1-faeb75107939"
     >Apply Now</a
   >
 
-          </details><details class="mb-4">
-            <summary class="font-bold text-blue-500">
-              Full Stack Javascript Developer at AddJust
-            </summary>
-            <article class="py-4 text-gray-400">
-              <section class="markdown"><h2><strong>DESCRIPTION</strong></h2>
+            </details><details class="mb-4">
+              <summary class="font-bold text-blue-500">
+                Full Stack Javascript Developer at AddJust
+              </summary>
+              <article class="py-4 text-gray-400">
+                <section class="markdown"><h2><strong>DESCRIPTION</strong></h2>
 <p>We are looking to add a full stack JavaScript developer to our engineering team.</p>
 <p>You would be part of a small team that is responsible for building out our latest product, which is currently in the design phase.</p>
 <p>Some of the things we value:</p>
@@ -6804,20 +6987,20 @@ You are located in an American or European time zone.</p>
 <p>It would also be an advantage if you can meet up somewhere close to Clare (Limerick, Galway etc) on a semi-regular basis (twice a month).</p>
 <p>No agencies please.</p>
 </section>
-            </article>
-            
+              </article>
+              
   <a
     class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
     href="https://addjust.workable.com/j/BE2F7128C1?viewed=true"
     >Apply Now</a
   >
 
-          </details><details class="mb-4">
-            <summary class="font-bold text-blue-500">
-              Deep Learning Engineer at Stockwell
-            </summary>
-            <article class="py-4 text-gray-400">
-              <section class="markdown"><p>At Stockwell, we are using machine learning and computer vision to build the retail platform of the future. In our world, brick and mortar stores look much different - we place stores right where our customers live, work and play so we can curate the products in our stores with the help of our customers. This is all possible because we design, build and operate automated stores that put the customer first with a seamless, frictionless checkout experience.</p>
+            </details><details class="mb-4">
+              <summary class="font-bold text-blue-500">
+                Deep Learning Engineer at Stockwell
+              </summary>
+              <article class="py-4 text-gray-400">
+                <section class="markdown"><p>At Stockwell, we are using machine learning and computer vision to build the retail platform of the future. In our world, brick and mortar stores look much different - we place stores right where our customers live, work and play so we can curate the products in our stores with the help of our customers. This is all possible because we design, build and operate automated stores that put the customer first with a seamless, frictionless checkout experience.</p>
 <h3><strong>You'll make an impact on one or more of these areas:</strong></h3>
 <ul>
 <li><strong>Design end-to-end pipelines for new vision models</strong>: We have a unique asset in that our fleet of stores generates hundreds of transactions a day, each of which is a similarly structured problem with rich collected context. You will build pipelines that operate on a per transaction basis that help determine the state of inventory in each of our stores after transaction and restocking events. This involves 1) adapting and inventing novel model architecture, 2) designing training data for those model 3) working with our internal ops teams or vendors to generate training data, and 4) deploying inference services against our incoming transaction queue.</li>
@@ -6841,20 +7024,20 @@ You are located in an American or European time zone.</p>
 <li>An interest in Advertising/Retail/CPG</li>
 </ul>
 </section>
-            </article>
-            
+              </article>
+              
   <a
     class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
     href="https://jobs.lever.co/stockwell/41a3eac8-59e0-44de-b788-8aab168d99b6"
     >Apply Now</a
   >
 
-          </details><details class="mb-4">
-            <summary class="font-bold text-blue-500">
-              Full Stack Engineer at Stockwell
-            </summary>
-            <article class="py-4 text-gray-400">
-              <section class="markdown"><p>At Stockwell, we are using machine learning and computer vision to build the retail platform of the future. In our world, brick and mortar stores look much different - we place stores right where our customers live, work and play so we can curate the products in our stores with the help of our customers. This is all possible because we design, build and operate automated stores that put the customer first with a seamless, frictionless checkout experience.
+            </details><details class="mb-4">
+              <summary class="font-bold text-blue-500">
+                Full Stack Engineer at Stockwell
+              </summary>
+              <article class="py-4 text-gray-400">
+                <section class="markdown"><p>At Stockwell, we are using machine learning and computer vision to build the retail platform of the future. In our world, brick and mortar stores look much different - we place stores right where our customers live, work and play so we can curate the products in our stores with the help of our customers. This is all possible because we design, build and operate automated stores that put the customer first with a seamless, frictionless checkout experience.
 We’re looking for a full-stack engineer to round out our skillsets and help lead our growing engineering team. Our ideal candidate is someone with meaningful SWE experience who wants to expand their responsibilities and own projects across our tech stack, and who can design and build end-to-end solutions from scratch.</p>
 <h3><strong>You'll make an impact on 1 or more of these areas:</strong></h3>
 <ul>
@@ -6881,20 +7064,20 @@ We’re looking for a full-stack engineer to round out our skillsets and help le
 <li>An interest in AI and Machine Learning.</li>
 </ul>
 </section>
-            </article>
-            
+              </article>
+              
   <a
     class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
     href="https://jobs.lever.co/stockwell/94717180-5d5c-4677-8b6f-6c5fa48cd653"
     >Apply Now</a
   >
 
-          </details><details class="mb-4">
-            <summary class="font-bold text-blue-500">
-              React Developer at MojoTech
-            </summary>
-            <article class="py-4 text-gray-400">
-              <section class="markdown"><p>Whether Back-End, Front-End, Full-Stack, Dev-Ops, or Mobile, a big part of what makes being a member of the engineering team at MojoTech so rewarding is the challenge. The job starts hard, and only gets harder. If you believe in constant improvement, and want to join a team that helps one another achieve that goal, please continue reading.</p>
+            </details><details class="mb-4">
+              <summary class="font-bold text-blue-500">
+                React Developer at MojoTech
+              </summary>
+              <article class="py-4 text-gray-400">
+                <section class="markdown"><p>Whether Back-End, Front-End, Full-Stack, Dev-Ops, or Mobile, a big part of what makes being a member of the engineering team at MojoTech so rewarding is the challenge. The job starts hard, and only gets harder. If you believe in constant improvement, and want to join a team that helps one another achieve that goal, please continue reading.</p>
 <p>As a React Developer at MojoTech you will utilize your experience with React, Redux, and the larger React ecosystem and best practices to deliver high-quality, reliable, and maintainable code on multiple projects per year. You will work closely with product managers, designers, and clients, to ensure the focus is on quickly delivering valuable working software in a pragmatic and agile manner.</p>
 <h2>Skills &amp; Requirements</h2>
 <p>The people we’re looking for should be able to check off all of this:</p>
@@ -6926,17 +7109,17 @@ We’re looking for a full-stack engineer to round out our skillsets and help le
 <p>Learn more about our engineering <a href="https://www.mojotech.com/engineering">approach and philosophy here.</a></p>
 <p><em>MojoTech is an Equal Employment Opportunity employer that will consider all qualified applicants, regardless of race, color, religion, gender, sexual orientation, marital status, gender identity or expression, national origin, genetics, age, disability status, protected veteran status, or any other characteristic protected by applicable law.</em></p>
 </section>
-            </article>
-            
+              </article>
+              
   <a
     class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
     href="https://www.mojotech.com/jobs"
     >Apply Now</a
   >
 
-          </details>
-    </div>
-    
+            </details>
+      </div>
+      
   <footer class="p-4">
     <div class="flex flex-col lg:flex-row items-center">
       <div class="w-full lg:w-auto lg:mr-auto text-center lg:text-left">
@@ -6945,7 +7128,7 @@ We’re looking for a full-stack engineer to round out our skillsets and help le
     </div>
   </footer>
 
-  </div>
-
+    </div>
+  
   </body>
 </html>

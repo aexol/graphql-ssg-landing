@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ["./pages/**/*.zeus.js"],
+  purge: ["./out/**/*.html"],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},

@@ -1,3 +1,5 @@
+import { Chain, html, md } from "./ssg/index.js";
+
 const configCode = `{
   "url": "https://api.graphql.jobs/",
   "out": "./out",
@@ -6,7 +8,9 @@ const configCode = `{
   "websocketPort": 1411
 }`;
 
-const code = `const PrimaryButton = ({ text, href }) => html\`
+const code = `
+import { Chain, html, md } from "./ssg/index.js";
+const PrimaryButton = ({ text, href }) => html\`
   <a
     class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
     href="\${href}"
@@ -16,7 +20,7 @@ const code = `const PrimaryButton = ({ text, href }) => html\`
 
 
 export default async () => {
-  const data = await Gql.query({
+  const data = await Chain(ssg.config.host).query({
     jobs: [
       {},
       { company: { name: true }, description: true, title: true, applyUrl: true },
@@ -86,18 +90,15 @@ const FeatureList = () => html`
     <div class="flex flex-wrap -mx-8">
       ${Feature({
         title: "Great Speed",
-        text:
-          "Create websites and deploy them instantly. Experience the flow you've never experienced before",
+        text: "Create websites and deploy them instantly. Experience the flow you've never experienced before",
       })}
       ${Feature({
         title: "Instant availability",
-        text:
-          "GraphQL SSG websites can be deployed instantly using GraphQL Editor JAMStack.",
+        text: "GraphQL SSG websites can be deployed instantly using GraphQL Editor JAMStack.",
       })}
       ${Feature({
         title: "Nothing to learn",
-        text:
-          "It is easy to start with basic HTML and CSS knowledge. GraphQL client is autocompleted thanks to GraphQL Zeus.",
+        text: "It is easy to start with basic HTML and CSS knowledge. GraphQL client is autocompleted thanks to GraphQL Zeus.",
       })}
     </div>
   </section>
@@ -130,7 +131,7 @@ window.onload = () => {
 };
 
 export default async () => {
-  const data = await Gql.query({
+  const data = await Chain(ssg.config.url).query({
     jobs: [
       {},
       {
@@ -141,6 +142,9 @@ export default async () => {
       },
     ],
   });
+  const readme = await fetch(
+    "https://raw.githubusercontent.com/graphql-editor/graphql-ssg/main/Readme.md"
+  ).then((r) => r.text());
   return html`
     <style>
       @import "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/default.min.css";
@@ -157,8 +161,7 @@ export default async () => {
         },
         right: {
           text: "Test Live",
-          href:
-            "https://app.graphqleditor.com/explore-projects/feature-mole?visibleMenu=mock",
+          href: "https://app.graphqleditor.com/explore-projects/feature-mole?visibleMenu=mock",
         },
       })}
       ${FeatureList()}
@@ -189,6 +192,7 @@ export default async () => {
           )
           .join("")}
       </div>
+      <div class="markdown">${md`${readme}`}</div>
       ${Footer()}
     </div>
   `;

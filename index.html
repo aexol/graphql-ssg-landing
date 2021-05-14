@@ -3,6 +3,10 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" media="screen" href="./index.css"/>
     <script type="module" src="./index.js"></script>
+
+  <title>GraphQL Static Site Generator</title>
+  <link href="./tailwind.css" type="text/css" rel="stylesheet" media="screen" />
+
   </head>
   <body>
     
@@ -10,65 +14,150 @@
       @import "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/default.min.css";
     </style>
     <div class="container mx-auto">
-      <section class="py-12 px-4 w-full">
-    <div class="w-full mx-auto">
-      <span class="text-2xl font-semibold py-24">GraphQL >_ SSG</span>
-      <h2 class="text-5xl mt-2 mb-6 leading-tight font-semibold font-heading">
-        Create GraphQL data driven static websites in no time.
-      </h2>
-      <p class="mb-8 text-gray-400 text-xl leading-relaxed">What you get is fully autocomplete driven GraphQL Client injected in Static Website Generator. Create landing pages and leverage the power of GraphQL. Connect to powerful headless CMS of choice, create your own backend or play with fake data.</p>
-      <div>
-        
+      
+  <section>
+    <div class="py-20 bg-gray-900 radius-for-skewed">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap items-center">
+          <div class="w-full lg:w-1/2 mb-12 lg:mb-0">
+            <div class="max-w-md">
+              <span class="text-yellow-500 font-bold"
+                >by graphqleditor.com</span
+              >
+              <h2
+                class="mb-2 text-4xl lg:text-5xl font-bold font-heading text-white"
+              >
+                GraphQL Static Site Generator
+              </h2>
+              <div class="max-w-xs">
+                <p class="text-gray-500 leading-loose">
+                  Simple bundler for GraphQL based website using esmodules. What
+                  makes it unique? It uses browser for ssg (not node).
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="w-full lg:w-1/2">
+            <div class="mb-12 lg:mb-8 flex flex-wrap items-start">
+              <span
+                class="mb-4 lg:mb-0 lg:mr-6 inline-flex items-center justify-center w-16 h-16 bg-blue-800 rounded text-blue-400 text-2xl font-bold"
+                >1</span
+              >
+              <div class="w-full lg:w-3/4">
+                <h3 class="mb-4 text-2xl font-bold font-heading text-white">
+                  ES Modules
+                </h3>
+                <p class="text-gray-500 leading-loose">
+                  Use ES Modules in your both static and dynamic code.
+                </p>
+              </div>
+            </div>
+            <div class="mb-12 lg:mb-8 flex flex-wrap items-start">
+              <span
+                class="mb-4 lg:mb-0 lg:mr-6 inline-flex items-center justify-center w-16 h-16 bg-pink-800 rounded text-pink-400 text-2xl font-bold"
+                >2</span
+              >
+              <div class="w-full lg:w-3/4">
+                <h3 class="mb-4 text-2xl font-bold font-heading text-white">
+                  URL Imports
+                </h3>
+                <p class="text-gray-500 leading-loose">
+                  import { html } from
+                  'https://unpkg.com/htm/preact/index.mjs?module'; Is a way to
+                  import now!
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-wrap items-start">
+              <span
+                class="mb-4 lg:mb-0 lg:mr-6 inline-flex items-center justify-center w-16 h-16 bg-purple-800 rounded text-purple-400 text-2xl font-bold"
+                >3</span
+              >
+              <div class="w-full lg:w-3/4">
+                <h3 class="mb-4 text-2xl font-bold font-heading text-white">
+                  Uses browser engine
+                </h3>
+                <p class="text-gray-500 leading-loose">
+                  If your code is intended to run in browser why generate it
+                  with node?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="skew skew-bottom mr-for-radius">
+      <svg
+        class="h-8 md:h-12 lg:h-20 w-full text-gray-900"
+        viewBox="0 0 10 10"
+        preserveAspectRatio="none"
+      >
+        <polygon fill="currentColor" points="0 0 10 0 0 10"></polygon>
+      </svg>
+    </div>
+  </section>
+ 
+  <section>
+    <div class="skew skew-top ml-for-radius">
+      <svg
+        class="h-8 md:h-12 lg:h-20 w-full text-gray-900"
+        viewBox="0 0 10 10"
+        preserveAspectRatio="none"
+      >
+        <polygon fill="currentColor" points="0 10 10 0 10 10"></polygon>
+      </svg>
+    </div>
+    <div class="py-20 bg-gray-900 radius-for-skewed">
+      <div class="container mx-auto px-4">
+        <div class="relative flex">
+          <div class="w-full xl:w-4/5 xl:ml-auto">
+            <img
+              class="md:max-w-xl xl:max-w-4xl mx-auto relative object-cover rounded"
+              src="/assets/codessg.png"
+              alt=""
+            />
+            <div
+              class="xl:absolute top-0 left-0 mt-12 xl:mt-20 max-w-xl mx-auto xl:mx-0 p-6 xl:py-24 rounded bg-gray-800 border-gray-50 shadow-md text-center"
+            >
+              <span class="font-bold text-purple-600"
+                >Nothing to learn</span
+              >
+              <h2 class="text-5xl font-bold font-heading text-white mb-10">
+                Build &amp; Launch without problems
+              </h2>
+              <p class="max-w-xs mx-auto text-gray-500 leading-loose mb-10">
+              Example: Display companies looking for people to work in GraphQL
+        industry
+              </p>
+              
   <a
     class="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow"
     href="https://github.com/graphql-editor/graphql-ssg"
-    >GitHub</a
+    >See code</a
   >
 
-        
-  <a class="text-indigo-600 hover:underline" href="https://app.graphqleditor.com/explore-projects/feature-mole?visibleMenu=mock">Test Live</a>
-
+            </div>
+          </div>
       </div>
     </div>
-  </section>
-      
-  <section class="p-4">
-    <div class="flex flex-wrap -mx-8">
-      
-  <div class="md:w-1/3 py-4 px-8 mb-4 md:mb-0">
-    <h3 class="text-2xl font-semibold font-heading">Great Speed</h3>
-    <p class="my-4 text-gray-400 leading-relaxed">Create websites and deploy them instantly. Experience the flow you've never experienced before</p>
-  </div>
-
-      
-  <div class="md:w-1/3 py-4 px-8 mb-4 md:mb-0">
-    <h3 class="text-2xl font-semibold font-heading">Instant availability</h3>
-    <p class="my-4 text-gray-400 leading-relaxed">GraphQL SSG websites can be deployed instantly using GraphQL Editor JAMStack.</p>
-  </div>
-
-      
-  <div class="md:w-1/3 py-4 px-8 mb-4 md:mb-0">
-    <h3 class="text-2xl font-semibold font-heading">Nothing to learn</h3>
-    <p class="my-4 text-gray-400 leading-relaxed">It is easy to start with basic HTML and CSS knowledge. GraphQL client is autocompleted thanks to GraphQL Zeus.</p>
-  </div>
-
+    <div class="skew skew-bottom mr-for-radius">
+      <svg
+        class="h-8 md:h-12 lg:h-20 w-full text-gray-900"
+        viewBox="0 0 10 10"
+        preserveAspectRatio="none"
+      >
+        <polygon fill="currentColor" points="0 0 10 0 0 10"></polygon>
+      </svg>
     </div>
   </section>
 
-      <h3 class="text-lg font-semibold text-blue-600 p-4 mt-10">
-        Example: Display companies looking for people to work in GraphQL
-        industry
-      </h3>
-      <label class="px-4">graphql-ssg.json</label>
-      <pre class="p-4"><code id="config"></code></pre>
-      <label class="px-4">index.js</label>
-      <pre class="p-4"><code id="code"></code></pre>
-      <h3 class="text-lg font-semibold text-blue-600 p-4 mt-10">
+      <h3 class="text-lg font-semibold text-blue-600 p-4 mt-10 text-center">
         Example: Result
       </h3>
       <div class="p-4">
         <details class="mb-4">
-              <summary class="font-bold text-blue-500">
+              <summary class="font-bold text-gray-100 text-center">
                 Senior Fullstack Engineer - Platform at Segment
               </summary>
               <article class="py-4 text-gray-400">
@@ -120,7 +209,7 @@
   >
 
             </details><details class="mb-4">
-              <summary class="font-bold text-blue-500">
+              <summary class="font-bold text-gray-100 text-center">
                 Full Stack JavaScript Developer at Unrealists
               </summary>
               <article class="py-4 text-gray-400">
@@ -166,7 +255,7 @@
   >
 
             </details><details class="mb-4">
-              <summary class="font-bold text-blue-500">
+              <summary class="font-bold text-gray-100 text-center">
                 Senior Software Engineer, API Development at DeepCrawl
               </summary>
               <article class="py-4 text-gray-400">
@@ -237,7 +326,7 @@
   >
 
             </details><details class="mb-4">
-              <summary class="font-bold text-blue-500">
+              <summary class="font-bold text-gray-100 text-center">
                 Experienced Backend Engineer - Go at Theorem
               </summary>
               <article class="py-4 text-gray-400">
@@ -297,7 +386,7 @@
   >
 
             </details><details class="mb-4">
-              <summary class="font-bold text-blue-500">
+              <summary class="font-bold text-gray-100 text-center">
                 Senior Software Engineer - Frontend at Close
               </summary>
               <article class="py-4 text-gray-400">
@@ -359,7 +448,7 @@ You are located in an American or European time zone.</p>
   >
 
             </details><details class="mb-4">
-              <summary class="font-bold text-blue-500">
+              <summary class="font-bold text-gray-100 text-center">
                 Senior Software Engineer - Backend at Close
               </summary>
               <article class="py-4 text-gray-400">
@@ -417,7 +506,7 @@ You are located in an American or European time zone.</p>
   >
 
             </details><details class="mb-4">
-              <summary class="font-bold text-blue-500">
+              <summary class="font-bold text-gray-100 text-center">
                 Full Stack Javascript Developer at AddJust
               </summary>
               <article class="py-4 text-gray-400">
@@ -462,7 +551,7 @@ You are located in an American or European time zone.</p>
   >
 
             </details><details class="mb-4">
-              <summary class="font-bold text-blue-500">
+              <summary class="font-bold text-gray-100 text-center">
                 Deep Learning Engineer at Stockwell
               </summary>
               <article class="py-4 text-gray-400">
@@ -499,7 +588,7 @@ You are located in an American or European time zone.</p>
   >
 
             </details><details class="mb-4">
-              <summary class="font-bold text-blue-500">
+              <summary class="font-bold text-gray-100 text-center">
                 Full Stack Engineer at Stockwell
               </summary>
               <article class="py-4 text-gray-400">
@@ -539,7 +628,7 @@ We’re looking for a full-stack engineer to round out our skillsets and help le
   >
 
             </details><details class="mb-4">
-              <summary class="font-bold text-blue-500">
+              <summary class="font-bold text-gray-100 text-center">
                 React Developer at MojoTech
               </summary>
               <article class="py-4 text-gray-400">
@@ -585,135 +674,82 @@ We’re looking for a full-stack engineer to round out our skillsets and help le
 
             </details>
       </div>
-      <div class="markdown"><h1>GraphQL SSG</h1>
-<p><a href=""><img src="https://img.shields.io/npm/v/graphql-ssg.svg?style=flat" alt="NPM Version"></a>
-<img src="https://github.com/graphql-editor/graphql-ssg/actions/workflows/release.yml/badge.svg" alt="Build"></p>
-<p>Simple bundler for GraphQL based website using esmodules. What makes it unique? It uses browser for bundling (not node)</p>
-<h2>Installation</h2>
-<p>Install globally</p>
-<pre><code class="language-sh">npm i -g graphql-ssg
-</code></pre>
-<h2>How to use</h2>
-<p>Init a new project. This will create <code>graphql-ssg.json</code> in current directory. You don't need a <code>package.json</code> but you can add one for type completions.</p>
-<pre><code class="language-sh">graphql-ssg --init .
-</code></pre>
-<p>Set up config.</p>
-<pre><code class="language-json">{
-  &quot;url&quot;: &quot;https://graphql-pokemon2.vercel.app/&quot;,
-  &quot;in&quot;: &quot;./pages&quot;,
-  &quot;out&quot;: &quot;./out&quot;,
-  &quot;websocketPort&quot;: 1414,
-  &quot;port&quot;: 8080
-}
-</code></pre>
-<p>So you need to provide your schema url in and out dirs for graphql-ssg</p>
-<p>You can also add headers if needed:</p>
-<pre><code class="language-json">{
-  &quot;headers&quot;: [&quot;Authorization: Bearer MyToken&quot;]
-}
-</code></pre>
-<p>Watch</p>
-<pre><code class="language-sh">graphql-ssg
-</code></pre>
-<p>Build</p>
-<pre><code class="language-sh">graphql-ssg --build
-</code></pre>
-<h2>How it works?</h2>
-<h3>File must contain export default</h3>
-<p>String returned in contained in file export default is generated via SSG phase.</p>
-<pre><code class="language-js">export default () =&gt; {
-  return html`
-    &lt;div&gt;Hello world&lt;/div&gt;
-  `;
-};
-</code></pre>
-<p>To have syntax coloring in html pleas install appropriate litelement extension for your IDE.</p>
-<h3>Config</h3>
-<p>Config file can be generated or created manually. It should contain all the following values.</p>
-<pre><code class="language-json">{
-  &quot;url&quot;: &quot;https://faker.graphqleditor.com/explore-projects/feature-mole/graphql&quot;,
-  &quot;in&quot;: &quot;./pages&quot;,
-  &quot;out&quot;: &quot;./out&quot;,
-  &quot;websocketPort&quot;: 1416,
-  &quot;port&quot;: 8082
-}
-</code></pre>
-<h4>Config Injection</h4>
-<p>Config file is injected and typed. It is available only inside <code>export default</code> and <code>export const head</code> function to prevent leaking of secrets.</p>
-<p>Usage in JS example:</p>
-<pre><code class="language-js">const graphQLClient = Chain(ssg.config.HOST, {
-  headers: {
-    Authorization: `Bearer ${ssg.config.TOKEN}`,
-  },
-});
-</code></pre>
-<h3>Environment variables</h3>
-<p>Environment variables must be put side by side to <code>graphql-ssg.json</code> in <code>.env</code> file.It is available only inside <code>export default</code> and <code>export const head</code> .</p>
-<p>Usage in JS example:</p>
-<pre><code class="language-js">const graphQLClient = Chain(ssg.env.HOST, {
-  headers: {
-    Authorization: `Bearer ${ssg.env.TOKEN}`,
-  },
-});
-</code></pre>
-<p>It is available only inside <code>export default</code> and <code>export const head</code> function to prevent leaking of secrets.</p>
-<h3>Injected built in helper code syntax functions</h3>
-<p>GraphQL SSG comes with generated library</p>
-<h4>Chain</h4>
-<p>Works like fetch to GraphQL, where you need to provide host and/or options to receive fully Autocompleted client for schema url from your config.</p>
-<pre><code class="language-js">import { Chain } from './ssg/index.js';
-const graphQLClient = Chain(ssg.config.host);
-
-const response = await graphQLClient.query({ people: true });
-</code></pre>
-<h4>html</h4>
-<p>It doesnt transform html in any way, but gives you syntax coloring</p>
-<pre><code class="language-js">import { html } from './ssg/index.js';
-const ADiv = html`
-  &lt;div&gt;Hello world&lt;/div&gt;
-`;
-</code></pre>
-<h4>md</h4>
-<p>It renders markdown using remarkable renderer so it is transformed to html.</p>
-<pre><code class="language-js">import { md } from './ssg/index.js';
-const MarkdownContent = md`
-# Title of my Story
-
-blah blah blah blah blah blah
-
-## How to read it?
-`;
-</code></pre>
-<h4>head</h4>
-<pre><code class="language-js">import { html } from './ssg/index.js';
-export const head = () =&gt; html`&lt;title&gt;Hello world!&lt;/div&gt;`;
-</code></pre>
-<h2>Assets</h2>
-<p>You can use them as normally.</p>
-<h2>Roadmap</h2>
-<ul>
-<li>[ ] Add esbuild</li>
-<li>[ ] Add TS support</li>
-<li>[x] Add intelligent .d.ts autocompletion for imported es modules</li>
-<li>[x] Add image supports</li>
-<li>[x] Generate tsconfig</li>
-<li>[x] Relative imports</li>
-<li>[x] Allow head modification</li>
-<li>[x] Pass env to browser</li>
-<li>[x] Provide a way to inject config</li>
-<li>[x] TSConfig generation for included declarations to work</li>
-<li>[x] Make zeus configurable and importable file</li>
-<li>[ ] Clear error handling with line numbers</li>
-</ul>
-</div>
       
-  <footer class="p-4">
-    <div class="flex flex-col lg:flex-row items-center">
-      <div class="w-full lg:w-auto lg:mr-auto text-center lg:text-left">
-        © 2021 GraphQL Editor
+  <section>
+    <div class="skew skew-top ml-for-radius">
+      <svg
+        class="h-8 md:h-12 lg:h-20 w-full text-gray-900"
+        viewBox="0 0 10 10"
+        preserveAspectRatio="none"
+      >
+        <polygon fill="currentColor" points="0 10 10 0 10 10"></polygon>
+      </svg>
+    </div>
+    <div class="py-20 bg-gray-900 radius-for-skewed">
+      <div class="container mx-auto px-4">
+        <div class="mb-20 lg:mb-40 max-w-2xl mx-auto text-center">
+          <a
+            class="inline-block mb-6 mx-auto text-white text-3xl font-bold leading-none"
+            href="#"
+            ><img
+              class="h-12"
+              src="atis-assets/logo/atis/atis-mono-sign.svg"
+              alt=""
+              width="auto"
+          /></a>
+          <h2 class="mb-4 text-white text-4xl lg:text-5xl font-bold">
+            ES Modules are the future of web
+          </h2>
+          <p class="mb-6 max-w-md mx-auto text-gray-400 leading-loose">
+            Dynamic and dynamically imported.
+          </p>
+          <a
+            class="inline-block py-2 px-6 bg-pink-600 hover:bg-pink-700 text-white font-bold rounded-l-xl rounded-t-xl"
+            href="https://github.com/graphql-editor/graphql-ssg"
+            >Get from GitHub</a
+          >
+        </div>
+        <div class="relative flex flex-wrap justify-between">
+          <div class="w-full lg:w-1/3 mb-6">
+            <ul class="flex flex-wrap justify-center">
+              <li class="mr-6">
+                  <a class="text-gray-400 hover:text-gray-300" href="/readme.html"
+                    >Docs</a
+                  >
+                </li>,<li class="mr-6">
+                  <a class="text-gray-400 hover:text-gray-300" href="https://graphqleditor.com"
+                    >GraphQL Editor</a
+                  >
+                </li>,<li class="mr-6">
+                  <a class="text-gray-400 hover:text-gray-300" href="https://github.com/graphql-editor/graphql-zeus"
+                    >GraphQL Zeus</a
+                  >
+                </li>,<li class="mr-6">
+                  <a class="text-gray-400 hover:text-gray-300" href="https://github.com/graphql-editor/stucco"
+                    >Stucco</a
+                  >
+                </li>
+            </ul>
+          </div>
+          <div
+            class="mb-6 w-full lg:w-auto lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 flex justify-center lg:space-x-4"
+          ></div>
+          <div class="w-full lg:w-1/3 flex justify-center lg:justify-end">
+            <span class="text-gray-400">GraphQL Editor sp. z o. o.</span>
+          </div>
+        </div>
       </div>
     </div>
-  </footer>
+    <div class="skew skew-bottom mr-for-radius">
+      <svg
+        class="h-8 md:h-12 lg:h-20 w-full text-gray-900"
+        viewBox="0 0 10 10"
+        preserveAspectRatio="none"
+      >
+        <polygon fill="currentColor" points="0 0 10 0 0 10"></polygon>
+      </svg>
+    </div>
+  </section>
 
     </div>
   

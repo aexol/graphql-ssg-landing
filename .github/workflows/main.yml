@@ -15,6 +15,7 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - run: npm install -g graphql-ssg@latest
       - run: graphql-ssg --build
+      - run: tailwindcss-cli build -o out/tailwind.css
       - uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
           branch: gh-pages # The branch the action should deploy to.
